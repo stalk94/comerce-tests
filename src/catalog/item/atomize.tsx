@@ -5,7 +5,7 @@ import { ItemProduct } from '../index';
 
 
 
-export const Name =({ name }: { name: string })=> {
+export const Name =({ name, sx }: { name: string })=> {
 
     return (
         <Typography
@@ -19,7 +19,8 @@ export const Name =({ name }: { name: string })=> {
                 maxWidth: '100%',
                 overflow: 'hidden',
                 textOverflow: 'ellipsis',
-                whiteSpace: 'nowrap'
+                whiteSpace: 'nowrap',
+                ...sx
             }}
         >
             { name }

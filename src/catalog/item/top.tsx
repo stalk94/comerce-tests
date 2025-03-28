@@ -30,13 +30,12 @@ export default function ({ item }: { item: ItemProduct }) {
                         alignItems: 'center',
 				    }}
                 >
-                    <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="16" height="16" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M3.34828 5L7 1.57074L5.32736 0L1.67564 3.42926L1.67264 3.42644L0 4.99719L0.00299883 5L0 5.00281L1.67264 6.57356L1.67564 6.57074L5.32736 10L7 8.42926L3.34828 5Z" fill="#415878"/>
                     </svg>
 
-                    <Box sx={{ml: 1}}>
-                        <Name name={item.name}/> 
-                    </Box>
+                    <Name sx={{ml: 1}} name={item.name}/> 
+                    
                 </Box>
             }  
 
