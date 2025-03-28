@@ -11,7 +11,7 @@ type NavTabProps = BoxProps & {
     onChange: (currentActiveIndex: number )=> void
 }
 
-
+// todo: не достаточно абстрактен
 export default function ({ activeIndex, onChange, ...props }: NavTabProps) {
     const theme = useTheme();
     const isMobile = useMediaQuery('(max-width:600px)');
