@@ -15,7 +15,7 @@
 1. Клонируйте репозиторий:
 
    ```bash
-   git clone https://github.com/stalk94/test-comerce
+   git clone https://github.com/stalk94/comerce-tests
    
 2. Установите зависимости node:
 
