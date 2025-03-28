@@ -1,0 +1,37 @@
+/*
+  Это временное решение
+*/
+
+.table-container {
+    overflow-x: auto;
+}
+  
+  .price-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+  }
+  
+  .price-table th,
+  .price-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+  
+  .price-table th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .price-table .highlight-row {
+    background-color: #e7f3fe; /* Подсветка строки */
+  }
+  
+  .price-table .highlight-col {
+    background-color: #e7f3fe; /* Подсветка столбца */
+  }
+  
+  .price-table .highlight-intersection {
+    background-color: #d1e7dd; /* Подсветка пересечения */
+    font-weight: bold;
+  }

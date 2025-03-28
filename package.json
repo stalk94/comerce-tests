@@ -1,0 +1,43 @@
+{
+  "name": "test-comerce",
+  "version": "1.0.0",
+  "private": "true",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite src --port=3001",
+    "build": "vite build src --outDir=../dist --watch --sourcemap",
+    "start": "next start",
+    "nextDev": "npx open-cli http://localhost:3000 & next dev"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "critters": "^0.0.25",
+    "dotenv": "^16.4.2",
+    "express": "^4.21.1",
+    "next": "^15.2.3"
+  },
+  "devDependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.7",
+    "@mui/material": "^6.4.7",
+    "@mui/x-data-grid": "^7.27.3",
+    "@mui/x-date-pickers": "^7.27.3",
+    "@types/react": "19.0.12",
+    "autoprefixer": "^10.4.21",
+    "framer-motion": "^12.5.0",
+    "postcss": "^8.5.3",
+    "primeicons": "^7.0.0",
+    "primereact": "^10.9.3",
+    "react": "^18.3.1",
+    "react-color": "^2.19.3",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "7.3.0",
+    "storybook": "^8.6.8",
+    "styled-components": "^6.1.15",
+    "vite": "^5.4.10"
+  }
+}
