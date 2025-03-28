@@ -1,6 +1,6 @@
 import React from "react";
 import { ItemProduct } from '../index';
-import { Box, Paper, Typography, Button } from "@mui/material";
+import { Box, Paper, Typography, Button, Container } from "@mui/material";
 
 
 /**
@@ -10,7 +10,11 @@ import { Box, Paper, Typography, Button } from "@mui/material";
 export default function ({ item }: { item: ItemProduct }) {
     
     return (
-        <section className="CenterCatalogItem">
+        <Box className="CenterCatalogItem"
+            sx={{
+                py: 5
+            }}
+        >
             <Typography
                 sx={{
                     fontFamily: 'Kinetika, sans-serif',
@@ -23,6 +27,7 @@ export default function ({ item }: { item: ItemProduct }) {
             >
                 Размеры и цены
             </Typography>
+            
             <Paper
                 elevation={0}
                 sx={{
@@ -86,6 +91,6 @@ export default function ({ item }: { item: ItemProduct }) {
                     </Box>
                 </Box>
             </Paper>
-        </section>
+        </Box>
     );
 }
