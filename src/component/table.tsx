@@ -104,7 +104,7 @@ export default function ()  {
 	
 
 	return (
-		<Box>
+		<Box id="table">
 			<div className="table-container">
 				<table className="price-table">
 					<thead>

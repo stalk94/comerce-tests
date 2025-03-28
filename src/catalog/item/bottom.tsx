@@ -98,8 +98,21 @@ export default function ({ item }: { item: ItemProduct }) {
                     mt: 3
                 }}
             >
-                <Box sx={{ display: 'flex', flexDirection: 'column', py: 5 }}>
-                    <Box sx={{ px: 7, mt: 2, display: 'flex', flexDirection: 'column' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                    <Box 
+                        sx={{ 
+                            p: {
+                                xs: 3, // padding для экранов xs (меньше 600px)
+                                sm: 3, // padding для экранов sm (600px и больше)
+                                md: 3, // padding для экранов md (960px и больше)
+                                lg: 4, // padding для экранов lg (1280px и больше)
+                                xl: 5, // padding для экранов xl (1920px и больше)
+                            },
+                            mt: 2, 
+                            display: 'flex', 
+                            flexDirection: 'column' 
+                        }}
+                    >
                         { activeIndex === 0 && <Description /> }
                     </Box>
                 </Box>
