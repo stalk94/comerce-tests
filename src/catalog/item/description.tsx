@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Paper, Typography, Button } from "@mui/material";
+import { Box, Paper, Typography, Button, useMediaQuery, useTheme } from "@mui/material";
 import { NumberInput } from '../../component/input';
 import { ItemProduct } from '../index';
 
@@ -75,8 +75,8 @@ const BlockPrice =({ item })=> {
                         xs: 3, // padding для экранов xs (меньше 600px)
                         sm: 5, // padding для экранов sm (600px и больше)
                         md: 15, // padding для экранов md (960px и больше)
-                        lg: 25, // padding для экранов lg (1280px и больше)
-                        xl: 35, // padding для экранов xl (1920px и больше)
+                        lg: 10, // padding для экранов lg (1280px и больше)
+                        xl: 15, // padding для экранов xl (1920px и больше)
                     }
                 }}
             >
@@ -102,6 +102,9 @@ const BlockPrice =({ item })=> {
 
 
 export const DescriptionSegment =({ item, nameComponent }: DescriptionSegmentProps)=> {
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
     const handlerChangeInputs =(name: 'width'|'height'|'count', value: number)=> {
         console.log(name, value);
     }
@@ -119,23 +122,24 @@ export const DescriptionSegment =({ item, nameComponent }: DescriptionSegmentPro
 
                 { nameComponent }
 
+                {/* описание */}
                 <Typography
                     sx={{
                         fontFamily: 'Kinetika, sans-serif',
                         mt: 3,
                         fontWeight: 100,
-                        fontSize: '16px',
+                        fontSize: isSmallScreen ? '14px' : '16px',
                         lineHeight: '1.5',
                         maxWidth: '100%',
                         textOverflow: 'ellipsis',
-                        whiteSpace: 'normal',           // Для многострочного текста
+                        whiteSpace: 'normal',
                        
                     }}
                 >
                     { item.description }
                 </Typography>
 
-                {/*  */}
+                {/* блок с ценой */}
                 <BlockPrice 
                     item={item}
                 />
@@ -171,7 +175,7 @@ export const DescriptionSegment =({ item, nameComponent }: DescriptionSegmentPro
                         <NumberInput 
                             label='Количество' 
                             onChange={(v)=> handlerChangeInputs('count', v)} 
-                            isAdornments={true} 
+                            isAdornments={ !isSmallScreen } 
                         />
                     </Box>
                 </Box>

@@ -54,12 +54,7 @@ const items: ItemProduct[] = [
 export default function({  }) {
     
     return (
-        <Container 
-            className="CatalogItem"
-            sx={{
-                
-            }}
-        >
+        <Container className="CatalogItem">
             <TopSegment
                 item={items[0]}
             />
