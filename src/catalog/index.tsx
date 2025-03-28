@@ -2,12 +2,14 @@ import React from "react";
 import TopSegment from './item/top';
 import CenterSegment from './item/center';
 import BottomSegment from './item/bottom';
+import { Container } from "@mui/material";
 import '../styles/item-catalog.css';
 import o1 from '../images/1.png';
 import o2 from '../images/2.png';
 import o3 from '../images/3.png';
 import o4 from '../images/4.png';
 import o5 from '../images/5.png';
+
 
 
 
@@ -52,7 +54,12 @@ const items: ItemProduct[] = [
 export default function({  }) {
     
     return (
-        <div className="CatalogItem">
+        <Container 
+            className="CatalogItem"
+            sx={{
+                
+            }}
+        >
             <TopSegment
                 item={items[0]}
             />
@@ -62,6 +69,6 @@ export default function({  }) {
             <BottomSegment
                 item={items[0]}
             />
-        </div>
+        </Container>
     );
 }

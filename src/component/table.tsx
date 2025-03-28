@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import '../styles/table.css';
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery } from "@mui/material";
 
 
 const TableFooter =()=> {
+	const isMobile = useMediaQuery('(max-width:600px)');
+
 	return(
 		<Box
 			sx={{
 				display: 'flex',
-				flexDirection: 'row',
-				alignItems: 'center',
+				flexDirection: isMobile ? 'column' :'row',
 				mt: 3,
 				ml: 0.5
 			}}
@@ -25,7 +26,8 @@ const TableFooter =()=> {
 					<circle cx="4" cy="4" r="4" fill="#5CC670" />
 				</svg>
 
-				<Typography
+				<Typography 
+					color='textDisabled'
 					sx={{
 						fontFamily: 'Kinetika, sans-serif',
 						fontWeight: 400,
@@ -39,12 +41,14 @@ const TableFooter =()=> {
 					стандартные размеры (всегда в наличии)
 				</Typography>
 			</Box>
+
 			<Box
 				sx={{
 					display: 'flex',
 					flexDirection: 'row',
 					alignItems: 'center',
-					ml: 5
+					ml: !isMobile && 5,
+					mt: isMobile && 1
 				}}
 			>
 				<svg width="10" height="10" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +56,8 @@ const TableFooter =()=> {
 				</svg>
 
 
-				<Typography
+				<Typography 
+					color='textDisabled'
 					sx={{
 						fontFamily: 'Kinetika, sans-serif',
 						fontWeight: 400,

@@ -1,6 +1,5 @@
 import React from "react";
 import { Box, Paper, Typography, Button } from "@mui/material";
-import useWindowSize from '../../hooks/resize';
 import { NumberInput } from '../../component/input';
 import { ItemProduct } from '../index';
 
@@ -33,6 +32,7 @@ const BlockPrice =({ item })=> {
                 borderRadius: '15px',
             }}
         >
+            
             <Box 
                 sx={{ 
                     minWidth: '180px', 
@@ -50,7 +50,7 @@ const BlockPrice =({ item })=> {
                         textAlign: 'center'
                     }}
                 >
-                    От {item.price?.current} P
+                    От { item.price?.current } ₽
                 </Typography>
                 <Typography color="black"
                     sx={{
@@ -65,7 +65,7 @@ const BlockPrice =({ item })=> {
                         color: '#9F9F9F'
                     }}
                 >
-                    {item?.price?.old || calculate()} P
+                    { item?.price?.old || calculate() } ₽
                 </Typography>
             </Box>
 
@@ -112,7 +112,8 @@ export const DescriptionSegment =({ item, nameComponent }: DescriptionSegmentPro
             <Box 
                 sx={{
                     display: 'flex',
-                    flexDirection: 'column'
+                    flexDirection: 'column',
+                    //mx: 1
                 }}
             >
 

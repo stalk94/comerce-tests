@@ -83,7 +83,9 @@ export default function ({ item }: { item: ItemProduct }) {
 
             {/* навигатор по доп инофрмации товара */}
             <NavigationTab 
-                sx={{mt: 10}}
+                sx={{
+                    mt: 5
+                }}
                 activeIndex={activeIndex} 
                 onChange={handlerChangeNavigationTab}
             />
