@@ -23,7 +23,7 @@ const BlockPrice =({ item })=> {
                 height: 80,
                 mt: 3,
                 px: {
-                    xs: 1, // padding для экранов xs (меньше 600px)
+                    xs: 2, // padding для экранов xs (меньше 600px)
                     sm: 2, // padding для экранов sm (600px и больше)
                     md: 3, // padding для экранов md (960px и больше)
                     lg: 4, // padding для экранов lg (1280px и больше)
@@ -85,14 +85,16 @@ const BlockPrice =({ item })=> {
                         fontFamily: 'Kinetika, sans-serif',
                         ml: 1,
                         fontWeight: 400,
-                        fontSize: '12px',
+                        fontSize: {
+                            xs: '12px'
+                        },
                         lineHeight: '1',
                         textAlign: 'left',
                         textTransform: 'uppercase',
                     }}
                 >
-                    Для расчета выберите интересующие Вас размеры в таблице  &nbsp;
-                    <a href="#table">Размеры и цены</a>
+                    Для расчета выберите интересующие Вас размеры в таблице
+                    <a href="#table"> Размеры и цены</a>
                 </Typography>
             </Box>
         </Paper>
@@ -104,6 +106,7 @@ const BlockPrice =({ item })=> {
 export const DescriptionSegment =({ item, nameComponent }: DescriptionSegmentProps)=> {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
 
     const handlerChangeInputs =(name: 'width'|'height'|'count', value: number)=> {
         console.log(name, value);
@@ -122,15 +125,14 @@ export const DescriptionSegment =({ item, nameComponent }: DescriptionSegmentPro
 
                 { nameComponent }
 
-                {/* описание */}
+                {/* ANCHOR: описание */}
                 <Typography
                     sx={{
                         fontFamily: 'Kinetika, sans-serif',
                         mt: 3,
-                        fontWeight: 100,
+                        //pl: 1,
                         fontSize: isSmallScreen ? '14px' : '16px',
                         lineHeight: '1.5',
-                        maxWidth: '100%',
                         textOverflow: 'ellipsis',
                         whiteSpace: 'normal',
                        
@@ -139,25 +141,26 @@ export const DescriptionSegment =({ item, nameComponent }: DescriptionSegmentPro
                     { item.description }
                 </Typography>
 
-                {/* блок с ценой */}
+                {/* ANCHOR: блок с ценой */}
                 <BlockPrice 
                     item={item}
                 />
 
-                {/* расчет цены */}
+                {/* ANCHOR: расчет цены */}
                 <Box>
                     <Typography
                         sx={{
                             fontFamily: 'Kinetika, sans-serif',
                             mt: 3,
-                            fontWeight: 100,
                             fontSize: '16px',
-                            lineHeight: '1.5'
+                            lineHeight: '1.5',
+                            textDecoration: 'underline'
                         }}
                     >
                         Введите посадочные размеры:
                     </Typography>
-                    <Box sx={{ 
+                    <Box 
+                        sx={{ 
                             mt: 4,
                             display: 'flex',
                             flexDirection: 'row',
@@ -173,18 +176,23 @@ export const DescriptionSegment =({ item, nameComponent }: DescriptionSegmentPro
                             onChange={(v)=> handlerChangeInputs('height', v)} 
                         />
                         <NumberInput 
-                            label='Количество' 
+                            label='Кол-во' 
                             onChange={(v)=> handlerChangeInputs('count', v)} 
                             isAdornments={ !isSmallScreen } 
                         />
                     </Box>
                 </Box>
 
-                {/* */}
+                {/* ANCHOR: кнопка */}
                 <Button 
+                    size="large"
                     variant="contained" 
                     color="error" 
-                    sx={{borderRadius:'16px', width:'100%',mt:2}}
+                    sx={{
+                        borderRadius: '16px',
+                        width: '100%',
+                        mt: 2
+                    }}
                 >
                     рассчитать стоимость Под заказ
                 </Button>

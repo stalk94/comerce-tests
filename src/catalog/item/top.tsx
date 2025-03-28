@@ -4,7 +4,7 @@ import { ItemProduct } from '../index';
 import { DescriptionSegment } from './description';
 import { Name } from './atomize';
 import useWindowSize from '../../hooks/resize';
-import { Box } from "@mui/material";
+import { Box, useTheme, useMediaQuery } from "@mui/material";
 
 
 /**
@@ -12,6 +12,8 @@ import { Box } from "@mui/material";
  * 
  */
 export default function ({ item }: { item: ItemProduct }) {
+    const theme = useTheme();
+    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
     const [currentImage, setCurrentImage] = React.useState<string>();
     const { width, height } = useWindowSize();
 
@@ -21,7 +23,7 @@ export default function ({ item }: { item: ItemProduct }) {
             className="TopCatalogItem"
             style={{ flexDirection: width < 1100 ? 'column' : 'row' }}
         >
-            {/* имя в mobail */}
+            {/* ANCHOR: имя в mobail */}
             { width < 1100 &&
                 <Box 
                     sx={{
@@ -34,12 +36,15 @@ export default function ({ item }: { item: ItemProduct }) {
                         <path d="M3.34828 5L7 1.57074L5.32736 0L1.67564 3.42926L1.67264 3.42644L0 4.99719L0.00299883 5L0 5.00281L1.67264 6.57356L1.67564 6.57074L5.32736 10L7 8.42926L3.34828 5Z" fill="#415878"/>
                     </svg>
 
-                    <Name sx={{ml: 1}} name={item.name}/> 
+                    <Name 
+                        sx={{ ml: 1 }} 
+                        name={item.name}
+                    /> 
                     
                 </Box>
             }  
 
-            {/* карусели */}
+            {/* ANCHOR: карусели */}
             { width > 1100 
                 ? <VerticalCarousel
                     item={item}
@@ -53,7 +58,7 @@ export default function ({ item }: { item: ItemProduct }) {
                  />
             }
 
-            {/* картинка только в mobail */}
+            {/* ANCHOR: картинка только в mobail */}
             { width > 1100 &&
                 <div className="PreviewImage">
                     <img

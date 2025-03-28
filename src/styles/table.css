@@ -3,35 +3,47 @@
 */
 
 .table-container {
-    overflow-x: auto;
+	overflow-x: auto;
+	cursor: pointer;
 }
-  
-  .price-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-  }
-  
-  .price-table th,
-  .price-table td {
-    border: 1px solid #ccc;
-    padding: 10px;
-  }
-  
-  .price-table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-  }
-  
-  .price-table .highlight-row {
-    background-color: #e7f3fe; /* Подсветка строки */
-  }
-  
-  .price-table .highlight-col {
-    background-color: #e7f3fe; /* Подсветка столбца */
-  }
-  
-  .price-table .highlight-intersection {
-    background-color: #d1e7dd; /* Подсветка пересечения */
-    font-weight: bold;
-  }
+
+.price-table {
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+.price-table th,
+.price-table td {
+	border: 1px solid #ccc;
+	padding: 10px;
+	font-size: 14px;
+}
+
+.price-table th {
+	background-color: #f4f4f4;
+	font-weight: bold;
+}
+
+.price-table .highlight-row {
+	background-color: #e7f3fe;
+	/* Подсветка строки */
+}
+
+.price-table .highlight-col {
+	background-color: #e7f3fe;
+	/* Подсветка столбца */
+}
+
+.price-table .highlight-intersection {
+	background-color: #d1e7dd;
+	/* Подсветка пересечения */
+	font-weight: bold;
+}
+
+
+@media only screen and (max-width: 1100px) {
+	.price-table td {
+		font-size: 12px;
+	}
+}

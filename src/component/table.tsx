@@ -135,12 +135,20 @@ export default function ()  {
 								onMouseLeave={() => setHoveredRow(null)}
 							>
 								{/* первый столбец (с высотой) */}
-								<td style={{backgroundColor: '#f4f4f4'}}>
+								<td style={{
+										backgroundColor: '#f4f4f4',
+										fontWeight: 'bold',
+										
+									}}
+								>
 									{ row }
 								</td>
 
 								{colLabels.map((col, colIndex) => (
 									<td
+										style={{
+
+										}}
 										key={colIndex}
 										onMouseEnter={() => setHoveredCol(colIndex)}
 										onMouseLeave={() => setHoveredCol(null)}
@@ -156,7 +164,7 @@ export default function ()  {
 												: ""
 											}`}
 									>
-										{ calculateSum(row, col) }P
+										{ calculateSum(row, col) }₽
 									</td>
 								))}
 							</tr>

@@ -11,7 +11,7 @@ export const Name =({ name, sx }: { name: string })=> {
     const isMediumScreen = useMediaQuery(theme.breakpoints.between('sm', 'md'));
 
     const useFontSize =()=> {
-        if(isSmallScreen) return '14px';
+        if(isSmallScreen) return '18px';
         else if(isMediumScreen) return '18px';
         else return '24px';
     }
