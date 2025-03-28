@@ -1,7 +1,9 @@
 import React from "react";
-import { Box, BoxProps, useTheme } from "@mui/material";
+import { Box, BoxProps, useTheme, useMediaQuery } from "@mui/material";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import { SxProps } from '@mui/system';
+
 
 
 type NavTabProps = BoxProps & {
@@ -12,16 +14,30 @@ type NavTabProps = BoxProps & {
 
 export default function ({ activeIndex, onChange, ...props }: NavTabProps) {
     const theme = useTheme();
+    const isMobile = useMediaQuery('(max-width:600px)');
+    const sxTab: SxProps = {
+        fontWeight: 600,
+        fontSize: {
+            xs: 12,
+            sm: 12,
+            md: 18, 
+            lg: 18, 
+            xl: 18
+        }
+    }
     
     const handleChange = (event: React.SyntheticEvent, newValue: number) => {
         onChange && onChange(newValue);
     }
-  
+    
     
     return (
         <Box 
             { ...props } 
-            sx={{ width: '100%', ...props.sx }}
+            sx={{ 
+                width: '100%', 
+                ...props.sx 
+            }}
         >
             <Tabs
                 value={activeIndex}
@@ -35,10 +51,10 @@ export default function ({ activeIndex, onChange, ...props }: NavTabProps) {
                     },
                 }}
             >
-                <Tab sx={{ fontSize: '16px', fontWeight:600 }} value={0} label="Описание" />
-                <Tab sx={{ fontSize: '16px', fontWeight:600 }} value={1} label="Характеристики" />
-                <Tab sx={{ fontSize: '16px', fontWeight:600 }} value={2} label="Размеры" />
-                <Tab sx={{ fontSize: '16px', fontWeight:600 }} value={3} label="Доставка" />
+                <Tab sx={sxTab} value={0} label="Описание" />
+                <Tab sx={sxTab} value={1} label={isMobile ? "Хар-ки" : 'Характеристики'} />
+                <Tab sx={sxTab} value={2} label="Размеры" />
+                <Tab sx={sxTab} value={3} label="Доставка" />
             </Tabs>
         </Box>
     );

@@ -3,8 +3,14 @@ import { TextField, InputAdornment, IconButton } from "@mui/material";
 import { Add, Remove } from "@mui/icons-material";
 
 
+type NumberInputProps = {
+    isAdornments?: boolean
+    label: React.ReactNode
+    onChange: (newValue: number)=> void
+}
 
-export function NumberInput({ isAdornments, label, onChange }) {
+
+export function NumberInput({ isAdornments, label, onChange }: NumberInputProps) {
     const [value, setValue] = React.useState(0);
 
     const handleDecrease = () => {
