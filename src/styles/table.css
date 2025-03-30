@@ -25,21 +25,33 @@
 	font-weight: bold;
 }
 
+/* при наведении */
 .price-table .highlight-row {
 	background-color: #e7f3fe;
 	/* Подсветка строки */
 }
-
 .price-table .highlight-col {
 	background-color: #e7f3fe;
 	/* Подсветка столбца */
 }
-
 .price-table .highlight-intersection {
 	background-color: #d1e7dd;
 	/* Подсветка пересечения */
 	font-weight: bold;
 }
+
+/* при клике */
+.selected-row {
+    background-color: #e7f3fe;
+}
+.selected-col {
+    background-color: #e7f3fe;
+}
+.selected-cell {
+    background-color: #9C2426;
+	color: white;
+}
+
 
 
 @media only screen and (max-width: 1100px) {

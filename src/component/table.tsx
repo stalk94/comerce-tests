@@ -31,7 +31,7 @@ const TableFooter =()=> {
 					sx={{
 						fontFamily: 'Kinetika, sans-serif',
 						fontWeight: 400,
-						fontSize: '14px',
+						fontSize: '12px',
 						lineHeight: '1',
 						letterSpacing: '0px',
 						textTransform: 'uppercase',
@@ -47,8 +47,8 @@ const TableFooter =()=> {
 					display: 'flex',
 					flexDirection: 'row',
 					alignItems: 'center',
-					ml: !isMobile && 5,
-					mt: isMobile && 1
+					ml: isMobile ? 0 : 5,
+					mt: isMobile ? 1 : 0
 				}}
 			>
 				<svg width="10" height="10" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +61,7 @@ const TableFooter =()=> {
 					sx={{
 						fontFamily: 'Kinetika, sans-serif',
 						fontWeight: 400,
-						fontSize: '14px',
+						fontSize: '12px',
 						lineHeight: '1',
 						letterSpacing: '0px',
 						textTransform: 'uppercase',
@@ -84,13 +84,18 @@ const calculateSum = (row, col) => row + col;
 
 
 // todo: связать стили через styled component с цветами из темы
-export default function ()  {
+export default function ({ onChange })  {
 	const [colLabels, setColLabels] = useState([]);
 	const [rowLabels, setRowLabels] = useState([]);
     const [hoveredRow, setHoveredRow] = useState(null);
 	const [hoveredCol, setHoveredCol] = useState(null);
+	const [selectedCell, setSelectedCell] = useState(null);
 
 
+	const handlerClickCell =(row, col)=> {
+		onChange && onChange(row, col, calculateSum(row, col));
+		setSelectedCell({ row, col });
+	}
 	const arrayFill = (start = 100, end = 1000, step = 50) => {
 		const result = [];
 
@@ -144,29 +149,37 @@ export default function ()  {
 									{ row }
 								</td>
 
-								{colLabels.map((col, colIndex) => (
-									<td
-										style={{
+								{ colLabels.map((col, colIndex) => {
+									const isHoveredRow = hoveredRow === rowIndex && colIndex <= hoveredCol;
+									const isHoveredCol = hoveredCol === colIndex && rowIndex <= hoveredRow;
+									const isSelected = selectedCell?.row === row && selectedCell?.col === col;
 
-										}}
-										key={colIndex}
-										onMouseEnter={() => setHoveredCol(colIndex)}
-										onMouseLeave={() => setHoveredCol(null)}
-										className={`${hoveredRow === rowIndex && colIndex <= hoveredCol
-												? "highlight-row"
-												: ""
-											} ${hoveredCol === colIndex && rowIndex <= hoveredRow
-												? "highlight-col"
-												: ""
-											} ${hoveredRow === rowIndex &&
-												hoveredCol === colIndex
-												? "highlight-intersection"
-												: ""
-											}`}
-									>
-										{ calculateSum(row, col) }₽
-									</td>
-								))}
+									const selectedRowIndex = selectedCell ? rowLabels.indexOf(selectedCell.row) : -1;
+                                    const selectedColIndex = selectedCell ? colLabels.indexOf(selectedCell.col) : -1;
+
+                                    // Выделяются ТОЛЬКО ячейки ДО пересечения
+                                    const isSelectedRow = selectedCell && rowIndex === selectedRowIndex && colIndex <= selectedColIndex;
+                                    const isSelectedCol = selectedCell && colIndex === selectedColIndex && rowIndex <= selectedRowIndex;
+									
+									return (
+										<td
+											key={colIndex}
+											onClick={() => handlerClickCell(row, col)}
+											onMouseEnter={() => setHoveredCol(colIndex)}
+											onMouseLeave={() => setHoveredCol(null)}
+											className={`
+													${isHoveredRow ? "highlight-row" : ""} 
+                                                    ${isHoveredCol ? "highlight-col" : ""} 
+                                                    ${isHoveredRow && isHoveredCol ? "highlight-intersection" : ""} 
+													${isSelectedRow ? "selected-row" : ""} 
+                                                	${isSelectedCol ? "selected-col" : ""}
+													${isSelected ? "selected-cell" : ""}
+												`}
+										>
+											{ calculateSum(row, col) }₽
+										</td>
+									);
+								})}
 							</tr>
 						))}
 					</tbody>

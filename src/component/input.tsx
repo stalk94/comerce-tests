@@ -4,14 +4,15 @@ import { Add, Remove } from "@mui/icons-material";
 
 
 type NumberInputProps = {
+    value: number
     isAdornments?: boolean
     label: React.ReactNode
     onChange: (newValue: number)=> void
 }
 
 
-export function NumberInput({ isAdornments, label, onChange }: NumberInputProps) {
-    const [value, setValue] = React.useState(0);
+export function NumberInput({ value, isAdornments, label, onChange }: NumberInputProps) {
+    const [stateValue, setValue] = React.useState(0);
 
     const handleDecrease = () => {
         setValue((prev) => Math.max(prev - 1, 0)); // Уменьшаем значение
@@ -50,7 +51,7 @@ export function NumberInput({ isAdornments, label, onChange }: NumberInputProps)
         <TextField
             type="number"
             label={label}
-            value={value}
+            value={value ?? stateValue}
             onChange={handleChange}
             InputProps={{
                 sx: {

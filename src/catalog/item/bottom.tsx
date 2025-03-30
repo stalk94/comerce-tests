@@ -68,7 +68,7 @@ const Description =()=> {
  * 
  * 
  */
-export default function ({ item }: { item: ItemProduct }) {
+export default function ({ item, onTableChange }: { item: ItemProduct }) {
     const [activeIndex, setActiveIndex] = React.useState(0);
     const handlerChangeNavigationTab =(index: number)=> {
         setActiveIndex(index);
@@ -79,7 +79,9 @@ export default function ({ item }: { item: ItemProduct }) {
     return (
         <section className="CenterCatalogItem">
             {/* табличка размеров и цен */}
-            <Table />
+            <Table 
+                onChange={onTableChange}
+            />
 
             {/* навигатор по доп инофрмации товара */}
             <NavigationTab 

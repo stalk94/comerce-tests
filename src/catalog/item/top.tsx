@@ -1,7 +1,7 @@
 import React from "react";
 import { VerticalCarousel, HorizontalCarousel } from '../../component/galery';
 import { ItemProduct } from '../index';
-import { DescriptionSegment } from './description';
+import DescriptionSegment from './description';
 import { Name } from './atomize';
 import useWindowSize from '../../hooks/resize';
 import { Box, useTheme, useMediaQuery } from "@mui/material";
@@ -10,7 +10,7 @@ import { Box, useTheme, useMediaQuery } from "@mui/material";
 
 export default function ({ item }: { item: ItemProduct }) {
     const [currentImage, setCurrentImage] = React.useState<string>();
-    const { width, height } = useWindowSize();
+    const { width, height } = useWindowSize();      // todo: перевести на useMediaQuery
 
     
     return (
