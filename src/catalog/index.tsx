@@ -1,16 +1,11 @@
 import React from "react";
-import TopSegment from './item/top';
-import CenterSegment from './item/center';
-import BottomSegment from './item/bottom';
-import { Container } from "@mui/material";
-import '../styles/item-catalog.css';
+import { useParams, useNavigate } from 'react-router-dom';
 import o1 from '../images/1.png';
 import o2 from '../images/2.png';
 import o3 from '../images/3.png';
 import o4 from '../images/4.png';
 import o5 from '../images/5.png';
-
-
+import '../styles/item-catalog.css';
 
 
 /**
@@ -31,9 +26,10 @@ export interface ItemProduct {
         count: number
     }
 }
-const items: ItemProduct[] = [
+// * тестовый источник данных
+export const items: ItemProduct[] = [
     { 
-        id: 1, 
+        id: 0, 
         images: [o1, o2, o3, o4, o5], 
         name: 'Люк сантехнический на магните ЛММ белый 0.8мм',
         description: 'Люк из окрашенного металла сантехнический на магнитах (ЛММ) – экономичный способ перекрыть технологические окна в стенах вспомогательных помещений, коридоров, мест общего пользования.',
@@ -42,6 +38,16 @@ const items: ItemProduct[] = [
             current: 301
         }
     },
+    {
+        id: 1,
+        images: [o1, o2, o3, o4, o5],
+        name: 'Люк сантехнический на магните ЛММ серый 1.0мм',
+        description: 'Серый люк с улучшенной магнитной системой. ',
+        price: {
+            old: 40,
+            current: 350
+        }
+    }
 ];
 
 
@@ -51,19 +57,21 @@ const items: ItemProduct[] = [
  * Сама реализация каталога не известна
  * 
  */
-export default function({  }) {
+export default function Catalog({  }) {
+    const navigate = useNavigate();
     
+    
+
     return (
-        <Container className="CatalogItem">
-            <TopSegment
-                item={items[0]}
-            />
-            <CenterSegment 
-                item={items[0]}
-            />
-            <BottomSegment
-                item={items[0]}
-            />
-        </Container>
+        <React.Fragment>
+            {items.map((item, index)=> 
+                <div 
+                    key={index}
+                    onClick={()=> navigate(`/catalog/item/${item.id}`)}
+                >
+                    { item.name }
+                </div>
+            )}
+        </React.Fragment>
     );
 }

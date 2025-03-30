@@ -38,8 +38,6 @@ declare module '@mui/material/styles' {
     }
 }
 
-
-
 // глобальные стили для элементов
 const elements = {
     input: {
@@ -106,10 +104,10 @@ export const lightTheme = createTheme({
     palette: {
         mode: "dark",
         primary: {
-            main: "#90caf9",
+            main: "#000",
         },
         secondary: {
-            main: "#f48fb1",
+            main: "#242424b5",
         },
         text: {
             disabled: 'gray'
@@ -131,7 +129,7 @@ export const lightTheme = createTheme({
             card: "#202940",
             paper: "#F4F5F7",       //  rgb(63, 63, 63)
             input: "#393E46",      // цвет фона всех инпутов, селектов #3b3b3ba8
-            navBar: "#86898d61",
+            navBar: "#F4F5F7",
             
         },
         // это управляет цветами обводок инпутов
@@ -139,4 +137,15 @@ export const lightTheme = createTheme({
             active: 'rgba(255, 255, 255, 0.25)'  
         }
     },
+    components: {
+        MuiIconButton: {
+            styleOverrides: {
+                root: {
+                    '&:hover': {
+                        backgroundColor: 'rgba(0, 0, 0, 0.1)',
+                    },
+                },
+            },
+        }
+    }
 });

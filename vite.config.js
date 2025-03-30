@@ -3,5 +3,15 @@ import react from '@vitejs/plugin-react';
 
 
 export default defineConfig({
-    plugins: [react()]
+    root: './src',
+    plugins: [react()],
+    server: {
+        host: 'localhost',
+        port: 3000,
+        open: true,
+        hmr: true
+    },
+    build: {
+        outDir: '../dist'
+    }
 });

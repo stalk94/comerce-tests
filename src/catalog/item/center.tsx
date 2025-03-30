@@ -3,10 +3,7 @@ import { ItemProduct } from '../index';
 import { Box, Paper, Typography, Button, Container } from "@mui/material";
 
 
-/**
- * 
- *
- */
+
 export default function ({ item }: { item: ItemProduct }) {
     
     return (

@@ -7,13 +7,8 @@ import useWindowSize from '../../hooks/resize';
 import { Box, useTheme, useMediaQuery } from "@mui/material";
 
 
-/**
- * 
- * 
- */
+
 export default function ({ item }: { item: ItemProduct }) {
-    const theme = useTheme();
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
     const [currentImage, setCurrentImage] = React.useState<string>();
     const { width, height } = useWindowSize();
 

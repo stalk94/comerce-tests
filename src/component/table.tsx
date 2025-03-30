@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import '../styles/table.css';
-import { Box, Typography, useMediaQuery } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 
 
 const TableFooter =()=> {

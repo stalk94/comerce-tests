@@ -9,7 +9,7 @@ type DescriptionSegmentProps = {
     nameComponent?: React.ReactNode 
 }
 
-
+//! имеется баг с слотом цены при значении более 9999
 const BlockPrice =({ item })=> {
     const calculate =()=> item.price.current + (item.price.current * 0.1);
 
@@ -35,7 +35,10 @@ const BlockPrice =({ item })=> {
             
             <Box 
                 sx={{ 
-                    minWidth: '180px', 
+                    minWidth: {
+                        xs: '150px',
+                        md: '180px',
+                    },
                     display: 'flex' 
                 }}
             >
@@ -43,7 +46,10 @@ const BlockPrice =({ item })=> {
                     sx={{
                         fontFamily: 'Kinetika, sans-serif',
                         fontWeight: 800,
-                        fontSize: '28px',
+                        fontSize: {
+                            xs: 22,
+                            md: 24,
+                        },
                         lineHeight: '1', // 100%
                         letterSpacing: '0px', // 0%
                         textTransform: 'uppercase',
@@ -59,7 +65,10 @@ const BlockPrice =({ item })=> {
                         mt: 0.5,
                         ml: 1,
                         fontWeight: 800,
-                        fontSize: '22px',
+                        fontSize: {
+                            xs: 18,
+                            md: 20,
+                        },
                         lineHeight: '1',
                         textAlign: 'center',
                         color: '#9F9F9F'
@@ -135,7 +144,6 @@ export const DescriptionSegment =({ item, nameComponent }: DescriptionSegmentPro
                         lineHeight: '1.5',
                         textOverflow: 'ellipsis',
                         whiteSpace: 'normal',
-                       
                     }}
                 >
                     { item.description }
