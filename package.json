@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build --sourcemap",
+    "preview": "vite preview",
     "start": "next start",
     "nextDev": "npx open-cli http://localhost:3000 & next dev"
   },
