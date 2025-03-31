@@ -22,12 +22,12 @@
     ```bash
     npm install
 
-3. Запускаем vite в режиме dev:
+3. Запускаем vite в режиме preview:
 
     ```bash
-    npm run dev
+    npm run preview
 
-4. Заходим в браузер и переходим на страницу: http://localhost:3001
+
 
 
 ## Замечания
