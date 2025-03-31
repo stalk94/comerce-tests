@@ -46,8 +46,8 @@ export default function BlockPrice ({ item }: DescriptionBlockPriceProps) {
                         fontFamily: 'Kinetika, sans-serif',
                         fontWeight: 800,
                         fontSize: {
-                            xs: 22,
-                            md: 24,
+                            xs: 18,
+                            md: 20,
                         },
                         lineHeight: '1', // 100%
                         letterSpacing: '0px', // 0%
@@ -65,8 +65,8 @@ export default function BlockPrice ({ item }: DescriptionBlockPriceProps) {
                         ml: 1,
                         fontWeight: 800,
                         fontSize: {
-                            xs: 18,
-                            md: 20,
+                            xs: 16,
+                            md: 18,
                         },
                         lineHeight: '1',
                         textAlign: 'center',

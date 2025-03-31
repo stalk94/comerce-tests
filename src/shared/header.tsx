@@ -59,14 +59,14 @@ const linkItemsTest: NavLinkItem[] = [
 
 
 export default function ({ linkItems }: { linkItems: NavLinkItem[] }) { 
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
 
     const handlerClickRightToolBar =(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, type: RightToolBarTypes)=> {
         console.log('click right tools: ', type);
     }
     const handlerNavigationLinkClick =(item: NavLinkItem)=> {
         console.log(item.path);
-        if(item.path) navigate(item.path);
+        //if(item.path) navigate(item.path);
     }
     const transform =()=> {
         const func =(items, parent?: string)=> {

@@ -65,7 +65,7 @@ export default function Catalog({  }) {
     return (
         <React.Fragment>
             {items.map((item, index)=> 
-                <div 
+                <div style={{cursor: 'pointer'}}
                     key={index}
                     onClick={()=> navigate(`/catalog/item/${item.id}`)}
                 >

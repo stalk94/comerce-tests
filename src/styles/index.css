@@ -24,16 +24,20 @@
 }
 
 
-/* шрифт Kinetika */
+/* ! шрифт Kinetika комерческий шрифт */
+/*
 @font-face {
-	font-family: 'Kinetika';
-	font-weight: 400;
+    font-family: 'Kinetika';
+    src: url('/fonts/Kinetika-Regular.eot');
+    src: url('/fonts/Kinetika-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/fonts/Kinetika-Regular.woff2') format('woff2'),
+        url('/fonts/Kinetika-Regular.woff') format('woff'),
+        url('/fonts/Kinetika-Regular.svg#Kinetika-Regular') format('svg');
+    font-weight: normal;
     font-style: normal;
-	src: url('./fonts/kinetika-regular.woff') format('woff'), /* Firefox >= 3.6, any other modern browser */
-		url('./fonts/kinetika-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-		
+    font-display: swap;
 }
-
+*/
 
 
 body {

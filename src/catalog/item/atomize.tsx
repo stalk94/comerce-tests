@@ -4,16 +4,15 @@ import MarqueeObserver from '../../component/marquee';
 
 
 
-
 export const Name =({ name, sx }: { name: string })=> {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
     const isMediumScreen = useMediaQuery(theme.breakpoints.between('sm', 'md'));
 
     const useFontSize =()=> {
-        if(isSmallScreen) return '18px';
-        else if(isMediumScreen) return '18px';
-        else return '24px';
+        if(isSmallScreen) return '16px';
+        else if(isMediumScreen) return '16px';
+        else return '20px';
     }
 
 
@@ -24,7 +23,10 @@ export const Name =({ name, sx }: { name: string })=> {
                 <Typography
                     sx={{
                         fontFamily: 'Kinetika, sans-serif',
-                        fontWeight: 800,
+                        fontWeight: {
+                            xs: 600,
+                            md: 800
+                        },
                         fontSize: useFontSize(),
                         lineHeight: '1',
                         letterSpacing: '0px',

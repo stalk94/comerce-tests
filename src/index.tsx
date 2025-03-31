@@ -12,9 +12,6 @@ import './styles/index.css';
 function Home() {
     const navigate = useNavigate();
 
-    React.useEffect(() => {
-        navigate('/catalog');
-    }, [navigate]);
 
     return <div>Загружается каталог...</div>;
 }
@@ -27,9 +24,7 @@ function Modules() {
     React.useEffect(() => {
         navigate('/');
 
-        setTimeout(()=> {
-            navigate('/catalog/item/0');
-        }, 200);
+        setTimeout(()=> {navigate('/catalog/item/0');}, 200);
         
     }, []);
     

@@ -15,8 +15,10 @@ export default function ({ item }: { item: ItemProduct }) {
             <Typography
                 sx={{
                     fontFamily: 'Kinetika, sans-serif',
-                    fontWeight: 800,
-                    fontSize: '20px',
+                    fontWeight: 600,
+                    fontSize: {
+                        xs: 18,
+                    },
                     lineHeight: '1', // 100%
                     letterSpacing: '0px', // 0%
                     textTransform: 'uppercase',
