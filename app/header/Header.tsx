@@ -1,9 +1,13 @@
-import React from "react";
+import React from 'react';
 import { Box } from "@mui/material";
-import Navigation, { NavLinkItem, RightToolBarTypes } from '../../app/header/app-bar';
+import Navigation, { NavLinkItem, RightToolBarTypes } from './app-bar';
 
 
-// !! ОЗНАКОМИТСЯ СО СТРУКТУРОЙ
+type Props = {
+    linkItems: NavLinkItem[]
+    useNavigation: (path: string)=> void
+}
+// Ссылки навигации верхнего AppBar
 const linkItemsTest: NavLinkItem[] = [
     {
         id: 'company',          // это должно быть уникально, будет использоватся для построения роутинга
@@ -56,16 +60,14 @@ const linkItemsTest: NavLinkItem[] = [
 ];
 
 
-
-export default function ({ linkItems }: { linkItems: NavLinkItem[] }) { 
-    //const navigate = useNavigate();
+export default function ({ linkItems, useNavigation }: Props) { 
 
     const handlerClickRightToolBar =(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, type: RightToolBarTypes)=> {
         console.log('click right tools: ', type);
     }
     const handlerNavigationLinkClick =(item: NavLinkItem)=> {
         console.log(item.path);
-        //if(item.path) navigate(item.path);
+        if(item.path) useNavigation(item.path);
     }
     const transform =()=> {
         const func =(items, parent?: string)=> {

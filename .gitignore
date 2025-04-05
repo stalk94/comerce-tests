@@ -4,4 +4,5 @@
 *storybook.log
 /lib
 /pages
+/.next
 links.md

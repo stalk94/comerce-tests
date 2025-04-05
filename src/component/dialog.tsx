@@ -1,40 +1,54 @@
-import React from 'react';
-import { styled } from '@mui/material/styles';
-import Dialog from '@mui/material/Dialog';
-import DialogTitle from '@mui/material/DialogTitle';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogActions from '@mui/material/DialogActions';
-import Button from '@mui/material/Button';
+import React from 'react'
+import { Dialog, DialogContent, DialogTitle, IconButton } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 
-const StyleDialog = styled(Dialog)(({ theme }) => ({
-    '& .MuiDialogContent-root': {
-        padding: theme.spacing(2),
-    },
-    '& .MuiDialogActions-root': {
-        padding: theme.spacing(1),
-    },
-}));
+type Props = {
+    open: boolean
+    setOpen: (v: boolean)=> void
+    children: any
+}
 
 
-export default function ({ open, setOpen }) {
+
+export default function SimpleDialog({ open, setOpen, children }: Props) {
+
     const handleClose = () => {
         setOpen(false);
     }
 
-    return(
-        <StyleDialog 
+
+    return (
+        <Dialog 
             open={open} 
-            onClose={handleClose} 
-            aria-labelledby={'dialog-title'}
+            onClose={handleClose}
+            sx={{
+                "& .MuiPaper-root": {
+                    background: (theme)=> theme.palette.background.paper,
+                    backdropFilter: "blur(14px)",
+                },
+            }}
         >
+            <DialogTitle>
+
+                <IconButton
+                    color="inherit"
+                    onClick={handleClose}
+                    aria-label="close"
+                    sx={{ 
+                        position: 'absolute', 
+                        right: 1, 
+                        top: 2 
+                    }}
+                >
+                    <CloseIcon />
+                </IconButton>
+            </DialogTitle>
+
             <DialogContent>
-                <DialogContentText>
-                
-                </DialogContentText>
+                { children }
+                { !children && <p>Это содержимое модального окна.</p> }
             </DialogContent>
-        </StyleDialog>
+        </Dialog>
     );
 }
