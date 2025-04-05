@@ -56,7 +56,7 @@ const IconGroop = ({ active, setActive, count }) => {
                 >
                     { i === active 
                         ? <AdjustOutlined sx={{fontSize:'14px',color:'#c11619'}} />
-                        : <FiberManualRecord sx={{fontSize:'12px'}} />
+                        : <FiberManualRecord sx={{fontSize:'12px', color: '#9F9F9F' }} />
                     }
                 </IconButton>
             );
@@ -166,8 +166,10 @@ const Description = ({ data, navigationSlot }) => {
                 }}
             >
                 <Typography
-                    color="text.primary"
+                    color="primary"
                     sx={{
+                        fontFamily: 'Kinetika, sans-serif',
+                        fontWeight: 800,
                         textAlign: "left",
                         fontSize: {
                             xs: "1.5rem", // Для мобильных устройств
@@ -180,7 +182,7 @@ const Description = ({ data, navigationSlot }) => {
                     { data.title }
                 </Typography>
                 <Typography
-                    color="text.secondary"
+                    color="secondary"
                     sx={{
                         textAlign: "left",
                         mt: 1
@@ -189,7 +191,8 @@ const Description = ({ data, navigationSlot }) => {
                     { data.description }
                 </Typography>
                 <Button
-                    variant='outlined'
+                    color='error'
+                    variant='contained'
                     sx={{
                         mt: 3
                     }}
@@ -216,7 +219,6 @@ const Description = ({ data, navigationSlot }) => {
 
 export default function PromoBaner ({ items }: Props) {
     const [active, setActive] = React.useState(0);
-
 
     return (
         <Card sx={{position:'relative'}}>

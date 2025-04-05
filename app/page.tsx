@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import { ItemPromoBaner, ItemProduct, NavLinkItem } from './global.d.ts';
-import PromoBaner from '../src/component/promo';
+import PromoBaner from './components/PromoBaner';
 import Proposition from './components/Proposition';
 import Catalog from './catalog';
 

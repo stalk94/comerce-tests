@@ -1,4 +1,3 @@
-'use client'
 import React from 'react';
 import { Box, IconButton, SvgIcon, SxProps, Typography } from '@mui/material';
 import { ItemProduct } from '../global.d.ts';

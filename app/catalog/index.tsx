@@ -1,33 +1,15 @@
 import React from "react";
-import { useParams, useNavigate } from 'react-router-dom';
+import { ItemProduct } from '../global.d.ts';
 import o1 from '../images/1.png';
 import o2 from '../images/2.png';
 import o3 from '../images/3.png';
 import o4 from '../images/4.png';
 import o5 from '../images/5.png';
-import '../styles/item-catalog.css';
 
 
-/**
- * !Интерфейс точно не известен
- */
-export interface ItemProduct {
-    id: number
-    name: string
-    description: string
-    images: string[]
-    price?: {
-        old: number
-        current: number
-    }
-    property?: {
-        width: number
-        height: number
-        count: number
-    }
-}
-// * тестовый источник данных
-export const items: ItemProduct[] = [
+
+// тестовый источник данных
+export const itemsTest: ItemProduct[] = [
     { 
         id: 0, 
         images: [o1, o2, o3, o4, o5], 
@@ -57,17 +39,15 @@ export const items: ItemProduct[] = [
  * Сама реализация каталога не известна
  * 
  */
-export default function Catalog({  }) {
-    const navigate = useNavigate();
-    
-    
+export default function Catalog({ items, useNavigate }) {
 
     return (
         <React.Fragment>
-            {items.map((item, index)=> 
-                <div style={{cursor: 'pointer'}}
+            {( items ?? itemsTest).map((item, index)=> 
+                <div 
+                    style={{cursor: 'pointer'}}
                     key={index}
-                    onClick={()=> navigate(`/catalog/item/${item.id}`)}
+                    onClick={()=> useNavigate(`/catalog/item/${item.id}`)}
                 >
                     { item.name }
                 </div>
