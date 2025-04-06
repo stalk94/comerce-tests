@@ -122,6 +122,9 @@ export const lightTheme = createTheme({
             border: 'rgba(255, 255, 255, 0.6)',
             icon: 'rgb(215, 215, 215)',
         },
+        card: {
+            border: '#e8e8e8'
+        },
         primary: {
             main: "#000",
         },

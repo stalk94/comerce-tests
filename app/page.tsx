@@ -1,11 +1,11 @@
 'use client'
 import React from "react";
 import { ItemPromoBaner, ItemProduct, NavLinkItem } from './global.d.ts';
-import PromoBaner from './components/PromoBaner';
+import PromoBaner from './home/PromoBaner';
+import GridCards from './home/GridCards';
 import Proposition from './components/Proposition';
 import Catalog from './catalog';
 import { CompanyBlock } from './components/Bloks';
-
 
 
 /*
@@ -62,26 +62,33 @@ const testTovars: ItemProduct[] = [
 ];
 
 
-// главная страница
+
+/** главная страница */
 export default function Home({ data }: { data: any }) {
 	const handlerClickCompanyDetail =()=> {
         console.log('ClickCompanyDetail');
     }
 
+
 	return (
 		<React.Fragment>
+            {/* банер */}
 			<PromoBaner 
 				items={testData} 
 			/>
-
-            <Proposition 
-
-            />
+            {/* выгодные предложения */}
+            <Proposition />
             {/* карточка компании */}
             <CompanyBlock 
                 onClick={handlerClickCompanyDetail}
             />
-            
+            {/* почему выбирают нас */}
+            <GridCards 
+                sx={{ 
+                    mt: 5 
+                }} 
+            />
+
             {/* scroller style */}
             <style>
                 {`

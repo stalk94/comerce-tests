@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Button } from "@mui/material";
+import { Box, Grid2 } from "@mui/material";
 import { LabelPromo, LabelSecondary } from './Text';
+import Button from './Buttons';
 
 
 export function CompanyBlock({ onClick }) {
@@ -9,7 +10,8 @@ export function CompanyBlock({ onClick }) {
             sx={{
                 mt: 5,
                 p: 5,
-                backgroundColor: (theme) => theme.palette.background.card
+                borderRadius: 5,
+                backgroundColor: (theme)=> theme.palette.background.card
             }}
         >
             <Box
@@ -48,8 +50,6 @@ export function CompanyBlock({ onClick }) {
                         С 2004 года мы уверенно занимаем лидирующие позиции в отрасли. В нашем интернет-магазине вы найдёте широкий ассортимент продукции с возможностью доставки по всей стране.
                     </LabelSecondary>
                     <Button
-                        color='error'
-                        variant='contained'
                         onClick={onClick}
                         sx={{
                             mt: 3,
@@ -65,3 +65,5 @@ export function CompanyBlock({ onClick }) {
         </Box>
     );
 }
+
+

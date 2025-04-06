@@ -70,3 +70,26 @@ export function LabelSecondary({ children, ...props }: TypographyProps) {
         </Typography>
     );
 }
+
+/** заголовок body1 */
+export function LabelPrimary({ children, ...props }: TypographyProps) {
+    return(
+        <Typography
+            { ...props }
+            data-edit='text'        //!
+            id='primary-linkList'
+            color="primary"
+            sx={{
+                fontFamily: 'Kinetika, sans-serif',
+                fontWeight: 800,
+                textAlign: "left",
+                textTransform: 'uppercase',
+                mb: 2,
+                ...props.sx
+            }}
+            variant='body1'
+        >
+            { children }
+        </Typography>
+    )
+}

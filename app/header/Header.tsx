@@ -1,6 +1,7 @@
 import React from 'react';
-import { Box } from "@mui/material";
+import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
 import Navigation, { NavLinkItem, RightToolBarTypes } from './app-bar';
+import Logo from "./logo";
 
 
 type Props = {
@@ -61,6 +62,8 @@ const linkItemsTest: NavLinkItem[] = [
 
 
 export default function ({ linkItems, useNavigation }: Props) { 
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     const handlerClickRightToolBar =(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, type: RightToolBarTypes)=> {
         console.log('click right tools: ', type);
@@ -98,6 +101,27 @@ export default function ({ linkItems, useNavigation }: Props) {
             }}
         >
             {/* тут еще верх */}
+            { !isMobile &&
+                <Box
+                    sx={{
+                        display:'flex',
+                        flexDirection: 'row'
+                    }}
+                >
+                    <Logo isMobail={false} />
+                    <Box
+                        sx={{
+                            display:'flex',
+                            flexDirection: 'row',
+                            marginLeft: 'auto'
+                        }}
+                    >
+                        <Typography>
+                            📞
+                        </Typography>
+                    </Box>
+                </Box>
+            }
 
             {/* верхняя навигация */}
             <Navigation 

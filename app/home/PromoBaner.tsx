@@ -3,7 +3,7 @@ import { Button, Box, ButtonGroup, Typography, IconButton } from '@mui/material'
 import { MediaImage } from '../../lib/components/carts/atomize';
 import Card from '../../lib/components/carts/base';
 import { FiberManualRecord, AdjustOutlined } from '@mui/icons-material';
-import { LabelPromo, LabelSecondary } from './Text';
+import { LabelPromo, LabelSecondary } from '../components/Text';
 
 
 type Props = {
@@ -211,7 +211,7 @@ export default function PromoBaner ({ items }: Props) {
             sx={{
                 position: 'relative', 
                 borderRadius: 10, 
-                borderColor: '#e8e8e8',
+                border: (theme)=> `1px solid ${theme.palette.card.border}`,
                 backgroundColor: (theme)=> theme.palette.background.card, 
             }}
         >

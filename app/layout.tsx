@@ -26,7 +26,7 @@ export default function ({ children }: { children: React.ReactNode }) {
         <html lang="en">
             <body>
                 <ClientLayout>
-                    {children}
+                    { children }
                 </ClientLayout>
             </body>
         </html>
