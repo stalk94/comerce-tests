@@ -1,10 +1,11 @@
 import React from "react";
 import { Box, Grid2 } from "@mui/material";
-import { LabelPromo, LabelSecondary } from './Text';
-import Button from './Buttons';
+import { LabelPromo, LabelSecondary } from '../components/Text';
+import Button from "../components/Buttons";
 
 
-export function CompanyBlock({ onClick }) {
+// todo: доработать
+export default function CompanyBlock({ onClick }) {
     return(
         <Box
             sx={{
@@ -17,21 +18,35 @@ export function CompanyBlock({ onClick }) {
             <Box
                 sx={{
                     display: 'flex',
-                    flexDirection: 'row'
+                    flexDirection: {
+                        xs: 'column',
+                        md: 'row'
+                    }
                 }}
             >
-                <img
+                <Box 
+                    component='img'
                     src='mps.png'
-                    style={{
-                        maxHeight: '260px',
+                    sx={{
+                        maxHeight: {
+                            xs: 160,
+                            md: 260,
+                        },
+                        maxWidth: {
+                            xs: 160,
+                            md: 260,
+                        }
                     }}
                 />
                 <Box
                     sx={{
                         display: 'flex',
                         flexDirection: 'column',
-                        justifyContent: 'center',
-                        px: 5
+                        justifyContent: 'start',
+                        px: {
+                            xs: 0,
+                            md: 5
+                        }
                     }}
                 >
                     <LabelPromo
@@ -40,6 +55,10 @@ export function CompanyBlock({ onClick }) {
                                 xs: "1rem", // Для мобильных устройств
                                 sm: "1.5rem",   // Для маленьких экранов
                                 md: "2rem", // Для средних и больших экранов
+                            },
+                            my: {
+                                xs: 3,
+                                md: 0
                             }
                         }}
                     >
@@ -53,7 +72,10 @@ export function CompanyBlock({ onClick }) {
                         onClick={onClick}
                         sx={{
                             mt: 3,
-                            mr: 50,
+                            mr: {
+                                xs: 5,
+                                md: 50,
+                            },
                             height: 50,
                             borderRadius: 5
                         }}

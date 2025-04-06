@@ -127,13 +127,13 @@ const PhotoColage = ({ images }) => {
                         "&:hover": { transform: "scale(1.1)" },
                         border: '2px solid gray',
                         maxHeight: {
-                            xs: '40px',
-                            sm: '60px',
+                            xs: '80px',
+                            sm: '80px',
                             md: "120px",
                         },
                         maxWidth: {
-                            xs: '40px',
-                            sm: '60px',
+                            xs: '80px',
+                            sm: '80px',
                             md: "120px",
                         }
                     }}

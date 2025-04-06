@@ -13,7 +13,10 @@ export function LabelHome({ children, ...props }: TypographyProps) {
                 fontFamily: 'Kinetika, sans-serif',
                 textTransform: 'uppercase',
                 fontWeight: 800,
-                fontSize: 28,
+                fontSize: {
+                    xs: 20,
+                    md: 28
+                },
                 lineHeight: '1',
                 textAlign: 'left',
                 my: 'auto',
@@ -52,6 +55,7 @@ export function LabelPromo({ children, ...props }: TypographyProps) {
     );
 }
 
+
 export function LabelSecondary({ children, ...props }: TypographyProps) {
     return(
         <Typography
@@ -71,7 +75,7 @@ export function LabelSecondary({ children, ...props }: TypographyProps) {
     );
 }
 
-/** заголовок body1 */
+/** заголовок body1 (нижние заголовки) */
 export function LabelPrimary({ children, ...props }: TypographyProps) {
     return(
         <Typography

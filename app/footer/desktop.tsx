@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Button, Typography, Grid2, IconButton } from "@mui/material";
 import { LabelPromo, LabelSecondary } from '../components/Text';
+import { TgTop, CallTop } from '../header/icons';
 
 
 const LinkList =({ items, label, onClick })=> {
@@ -160,26 +161,41 @@ export default function() {
             <Box
                 sx={{
                     display:'flex',
-                    flexDirection: 'row'
+                    flexDirection: 'row',
+                    
                 }}
             >
-                <Typography>
+                <Typography variant='caption' sx={{color: '#9F9F9F'}}>
                     Copyright © Метпромснаб, 2016-2025
                 </Typography>
-                <Typography>
+                <Typography variant='caption' sx={{ml:10}}>
                     Политика конфиденциальности
                 </Typography>
-                <Box
+            </Box>
+        </Box>
+    );
+}
+
+
+/**
+ * <Box
                     sx={{
                         display:'flex',
                         flexDirection: 'row',
                         marginLeft: 'auto'
                     }}
                 >
-                    Мессенджеры: 
-                    📞 📞
+                    <Typography variant='caption'>
+                        <span style={{marginRight: '5px'}}>
+                            Мессенджеры: 
+                        </span>
+                        <IconButton>
+                            <CallTop sx={{ fontSize: 24 }} />
+                        </IconButton>
+                        <IconButton sx={{mr: 10}}>
+                            <TgTop sx={{ fontSize: 24 }} />
+                        </IconButton>
+                    </Typography>
+                    
                 </Box>
-            </Box>
-        </Box>
-    );
-}
+ */

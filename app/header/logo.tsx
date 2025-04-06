@@ -1,15 +1,16 @@
 import React from 'react';
-import { SvgIcon } from '@mui/material';
+import { SvgIcon, SvgIconProps } from '@mui/material';
 
 
 
-export default function({ isMobail }) {
+export default function({ isMobail, ...props }) {
     return(
         <SvgIcon  
             viewBox="0 0 208 35" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
             sx={{
+                mt: !isMobail && 1,
                 width: isMobail ? 180 : 200,
             }}
         >

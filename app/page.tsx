@@ -4,8 +4,9 @@ import { ItemPromoBaner, ItemProduct, NavLinkItem } from './global.d.ts';
 import PromoBaner from './home/PromoBaner';
 import GridCards from './home/GridCards';
 import Proposition from './components/Proposition';
+import CompanyBlock from './home/CompanyBlock';
 import Catalog from './catalog';
-import { CompanyBlock } from './components/Bloks';
+import { useMediaQuery, useTheme } from "@mui/material";
 
 
 /*
@@ -65,6 +66,9 @@ const testTovars: ItemProduct[] = [
 
 /** главная страница */
 export default function Home({ data }: { data: any }) {
+    const theme = useTheme();
+    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
 	const handlerClickCompanyDetail =()=> {
         console.log('ClickCompanyDetail');
     }
@@ -77,7 +81,9 @@ export default function Home({ data }: { data: any }) {
 				items={testData} 
 			/>
             {/* выгодные предложения */}
-            <Proposition />
+            <Proposition 
+                countRow={isMobile ? 2 : 4}
+            />
             {/* карточка компании */}
             <CompanyBlock 
                 onClick={handlerClickCompanyDetail}

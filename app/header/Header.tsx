@@ -1,7 +1,8 @@
 import React from 'react';
-import { Box, Typography, useTheme, useMediaQuery } from "@mui/material";
+import { Box, Typography, useTheme, useMediaQuery, IconButton, Button } from "@mui/material";
 import Navigation, { NavLinkItem, RightToolBarTypes } from './app-bar';
 import Logo from "./logo";
+import { TgTop, MassageTop, MobailTop, CallTop } from './icons';
 
 
 type Props = {
@@ -105,7 +106,8 @@ export default function ({ linkItems, useNavigation }: Props) {
                 <Box
                     sx={{
                         display:'flex',
-                        flexDirection: 'row'
+                        flexDirection: 'row',
+                        my: 0.5
                     }}
                 >
                     <Logo isMobail={false} />
@@ -116,9 +118,53 @@ export default function ({ linkItems, useNavigation }: Props) {
                             marginLeft: 'auto'
                         }}
                     >
-                        <Typography>
-                            📞
-                        </Typography>
+                        <IconButton>
+                            <CallTop sx={{ fontSize:26 }}/>
+                        </IconButton>
+                        <IconButton>
+                            <TgTop sx={{ fontSize:26 }} />
+                        </IconButton>
+
+                        <Button
+                            variant="text"
+                            sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 1,
+                                ml: 6
+                            }}
+                        >
+                            <MobailTop sx={{ fontSize: 28 }} />
+                            <Typography variant='caption' sx={{textTransform: 'none'}}>
+                                8 (800) 201-13-21
+                            </Typography>
+                        </Button>
+                        <Button
+                            variant="text"
+                            sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 1,
+                            }}
+                        >
+                            <MassageTop sx={{ fontSize: 28 }} />
+                            <Typography variant='caption' sx={{textTransform: 'none'}}>
+                                metpromsnab@mail.ru
+                            </Typography>
+                        </Button>
+                        <Button
+                            variant="text"
+                            sx={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: 1,
+                            }}
+                        >
+                            <MobailTop sx={{ fontSize: 28 }} />
+                            <Typography variant='caption' sx={{textTransform: 'none'}}>
+                                <a href="#feed-back">Заказать звонок </a>
+                            </Typography>
+                        </Button>
                     </Box>
                 </Box>
             }
