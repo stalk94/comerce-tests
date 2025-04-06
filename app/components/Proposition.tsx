@@ -2,7 +2,8 @@ import React from 'react';
 import { Box, IconButton, SvgIcon, SxProps, Typography } from '@mui/material';
 import { ItemProduct } from '../global.d.ts';
 import { Price } from '../catalog/item/descripton-price';
-import { LabelHome } from './Text';
+import { LabelHome, LabelSecondary } from './Text';
+
 
 
 type Props = {
@@ -22,19 +23,18 @@ const DescriptionBoxCard =({ item })=> {
                 textAlign: 'left',
                 flexGrow: 15,
                 color: 'black',
-                borderRadius:5,
+                borderRadius: 5,
                 background: (theme)=> theme.palette.background.navBar,
                 px: 2,
-                mb: 2
             }}
         >
-            <Typography
+            <LabelSecondary
                 sx={{
                     my: 1,
                 }}
             >
                 { item.name }
-            </Typography>
+            </LabelSecondary>
             <Price 
                 sx={{
                     mb: 1
@@ -51,13 +51,14 @@ const Card = ({ item, id }) => {
     return (
         <Box
             sx={{
-                flex: 1,                // равномерно занимает ширину
+                flex: 1,                
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
-                backgroundColor: '#f9f9f9',
-                borderRadius: 10,
+                backgroundColor: '#f9f9f9',         //! переделать на цвет темы
+                border: '1px solid #e8e8e8',        //! переделать на цвет темы
+                borderRadius: 8,
                 overflow: 'hidden',
             }}
         >
@@ -218,6 +219,7 @@ export default function({ items, countRow, sx }: Props) {
                     flexDirection: 'row',
                 }}
             >
+                {/* Подпись, можно сделать редактируемым */}
                 <LabelHome>
                     Выгодные предложения
                 </LabelHome>

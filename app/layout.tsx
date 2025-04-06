@@ -1,5 +1,9 @@
-import ClientLayout from './components/ClientLayout'
+import { CacheProvider } from '@emotion/react';
+import createCache from '@emotion/cache';
+import ClientLayout from './components/ClientLayout';
+import './dynamic.css';
 
+//const cache = createCache({ key: 'css', prepend: true });
 
 export const metadata = {
     title: 'МетПромСнаб',
@@ -22,7 +26,7 @@ export default function ({ children }: { children: React.ReactNode }) {
         <html lang="en">
             <body>
                 <ClientLayout>
-                    { children }
+                    {children}
                 </ClientLayout>
             </body>
         </html>

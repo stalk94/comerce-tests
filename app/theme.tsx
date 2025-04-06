@@ -102,7 +102,26 @@ export const darkTheme = createTheme({
 export const lightTheme = createTheme({
     elements,
     palette: {
-        mode: "dark",
+        mode: "light",
+        input: {
+            main: '#F4F5F7',
+            border: '#333',
+            error: '#f34f4fcc',
+            success: 'rgba(120, 227, 114, 0.6)',
+            placeholder: '#808080',
+        },
+        chekbox: {
+            main: 'rgba(255, 255, 255, 0.05)',
+            border: 'rgba(255, 255, 255, 0.3)',
+            success: 'rgba(255, 255, 255, 0.6)',
+        },
+        switch: {
+            trackOn: 'rgba(255, 255, 255, 0.25)',
+            trackOff: 'rgba(255, 255, 255, 0.05)',
+            thumb: 'rgb(215, 215, 215)',
+            border: 'rgba(255, 255, 255, 0.6)',
+            icon: 'rgb(215, 215, 215)',
+        },
         primary: {
             main: "#000",
         },
@@ -126,7 +145,7 @@ export const lightTheme = createTheme({
         background: {
             default: '#ffffff',         //  '#2c303d'
             sidenav: "#1f283e",
-            card: "#202940",
+            card: "#F4F5F7",
             paper: "#F4F5F7",       //  rgb(63, 63, 63)
             input: "#393E46",      // цвет фона всех инпутов, селектов #3b3b3ba8
             navBar: "#F4F5F7",

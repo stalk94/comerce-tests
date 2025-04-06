@@ -3,6 +3,7 @@ import { Button, Box, ButtonGroup, Typography, IconButton } from '@mui/material'
 import { MediaImage } from '../../lib/components/carts/atomize';
 import Card from '../../lib/components/carts/base';
 import { FiberManualRecord, AdjustOutlined } from '@mui/icons-material';
+import { LabelPromo, LabelSecondary } from './Text';
 
 
 type Props = {
@@ -100,6 +101,10 @@ const PhotoColage = ({ images }) => {
                     xs: 0,
                     md: 6
                 },
+                mb: {
+                    xs: 0,
+                    md: 1
+                },
                 maxHeight: "100%", // Ограничение высоты
                 overflow: "hidden", // Не вылазить за пределы
                 maxWidth: "100%", // Ограничение по ширине для контейнера
@@ -165,31 +170,12 @@ const Description = ({ data, navigationSlot }) => {
                     p: 2
                 }}
             >
-                <Typography
-                    color="primary"
-                    sx={{
-                        fontFamily: 'Kinetika, sans-serif',
-                        fontWeight: 800,
-                        textAlign: "left",
-                        fontSize: {
-                            xs: "1.5rem", // Для мобильных устройств
-                            sm: "2rem",   // Для маленьких экранов
-                            md: "2.5rem", // Для средних и больших экранов
-                        }
-                    }}
-                    variant='h4'
-                >
+                <LabelPromo id='primary-promo'>
                     { data.title }
-                </Typography>
-                <Typography
-                    color="secondary"
-                    sx={{
-                        textAlign: "left",
-                        mt: 1
-                    }}
-                >
+                </LabelPromo>
+                <LabelSecondary>
                     { data.description }
-                </Typography>
+                </LabelSecondary>
                 <Button
                     color='error'
                     variant='contained'
@@ -221,7 +207,14 @@ export default function PromoBaner ({ items }: Props) {
     const [active, setActive] = React.useState(0);
 
     return (
-        <Card sx={{position:'relative'}}>
+        <Card 
+            sx={{
+                position: 'relative', 
+                borderRadius: 10, 
+                borderColor: '#e8e8e8',
+                backgroundColor: (theme)=> theme.palette.background.card, 
+            }}
+        >
             <React.Fragment>
                 <MediaImage 
                     src={(items ?? testData)[active].images[0]} 

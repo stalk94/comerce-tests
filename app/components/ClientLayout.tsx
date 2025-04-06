@@ -1,9 +1,13 @@
 'use client'
+import { useEffect, useState } from 'react';
+import Editor from '../../editor/index';
 import Header from '../header/Header';
+import Footer from '../footer/Footer';
 import { useRouter } from 'next/navigation';
 import { Box } from '@mui/material';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import { lightTheme } from '../theme';
+
 
 
 // данные панели верхней навинации
@@ -62,16 +66,33 @@ const linkItemsTest = [
 
 // главный экран
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+    const [mounted, setMounted] = useState(false);
+    const [component, setComponent] = useState();
     const router = useRouter();
+
 
     const useNavigation =(path: string)=> {
         router.push(path);
     }
+    const useClick =(e: MouseEvent)=> {
+        if (e.target.dataset.edit) {
+            setComponent(e.target);
+        }
+    }
+    useEffect(() => {
+        setMounted(true); // Рендерим Craft.js только на клиенте
+    }, []);
+    
 
+    if (!mounted) return <div>Загрузка...</div>;
     return (
         <ThemeProvider theme={lightTheme}>
             <CssBaseline />
+            <Editor 
+                component={component} 
+            />
             <Box 
+                onClick={useClick}
                 className='BaseLayout'
                 sx={{
                     width: '100%',
@@ -87,6 +108,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 />
                 { children }
             </Box>
+            {/* ноги */}
+            <Footer
+                    
+            />
         </ThemeProvider>
     )
 }

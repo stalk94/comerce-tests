@@ -4,6 +4,7 @@ import { ItemPromoBaner, ItemProduct, NavLinkItem } from './global.d.ts';
 import PromoBaner from './components/PromoBaner';
 import Proposition from './components/Proposition';
 import Catalog from './catalog';
+import { CompanyBlock } from './components/Bloks';
 
 
 
@@ -63,15 +64,46 @@ const testTovars: ItemProduct[] = [
 
 // главная страница
 export default function Home({ data }: { data: any }) {
-	
+	const handlerClickCompanyDetail =()=> {
+        console.log('ClickCompanyDetail');
+    }
+
 	return (
 		<React.Fragment>
 			<PromoBaner 
 				items={testData} 
 			/>
+
             <Proposition 
 
             />
+            {/* карточка компании */}
+            <CompanyBlock 
+                onClick={handlerClickCompanyDetail}
+            />
+            
+            {/* scroller style */}
+            <style>
+                {`
+                    ::-webkit-scrollbar-track {
+                        background-color:#2a2a2b85
+                    }
+                    ::-webkit-scrollbar-thumb {
+                        -webkit-border-radius: 3px;
+                        border-radius: 3px;
+                        background-color:#dedfdf;
+                        border: #333 1px solid;
+                    }
+                    ::-webkit-scrollbar-thumb {
+                        -webkit-border-radius: 10px;
+                        border-radius: 10px;
+                        background-color:#adadad;
+                    }
+                    ::-webkit-scrollbar {
+                        width: 10px;
+                    }
+                `}
+            </style>
 		</React.Fragment>
 	);
 }

@@ -1,5 +1,3 @@
-
-
 export interface ItemProduct {
     id: number
     name: string
@@ -9,6 +7,10 @@ export interface ItemProduct {
         old: number
         current: number
     }
+    /** список навешанных отметок к примеру скидок, либо new отметки */
+    badge?: [
+
+    ]
     property?: {
         width: number
         height: number
@@ -16,12 +18,14 @@ export interface ItemProduct {
     }
 }
 
+
 export interface ItemPromoBaner {
     title: string
     buttonText: string
     description: string
     images: string[]
 }
+
 
 export interface NavLinkItem {
     id: string
