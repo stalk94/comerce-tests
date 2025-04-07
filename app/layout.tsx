@@ -1,4 +1,3 @@
-import { CacheProvider } from '@emotion/react';
 import createCache from '@emotion/cache';
 import ClientLayout from './App';
 import './dynamic.css';
@@ -24,6 +23,10 @@ export default function ({ children }: { children: React.ReactNode }) {
     
     return (
         <html lang="en">
+            <head>
+
+            </head>
+            
             <body>
                 <ClientLayout>
                     { children }

@@ -15,7 +15,7 @@ export default function ({ item }: { item: ItemProduct }) {
     return (
         <section 
             className="TopCatalogItem"
-            style={{ flexDirection: width < 1100 ? 'column' : 'row' }}
+            style={{ flexDirection: isMobile ? 'column' : 'row' }}
         >
             {/* ANCHOR: имя в mobail */}
             { isMobile &&

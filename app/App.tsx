@@ -1,5 +1,4 @@
 'use client'
-import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Editor from '../editor/index';
 import Header from './components/header/Header';
@@ -67,12 +66,8 @@ const linkItemsTest = [
 // главный экран
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     const [component, setComponent] = useState();
-    const router = useRouter();
 
 
-    const useNavigation =(path: string)=> {
-        router.push(path);
-    }
     const useClick =(e: MouseEvent)=> {
         if (e.target.dataset.edit) {
             setComponent(e.target);
@@ -86,7 +81,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Editor 
                 component={component} 
             />
-            {/* основной контейнер */}
             <Box 
                 onClick={useClick}
                 className='BaseLayout'
@@ -99,7 +93,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 }}
             >
                 <Header 
-                    useNavigation={useNavigation}
                     linkItems={linkItemsTest} 
                 />
                 { children }

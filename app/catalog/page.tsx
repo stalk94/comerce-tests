@@ -2,7 +2,7 @@
 import React from "react";
 import { usePathname, useRouter } from 'next/navigation';
 import { Grid2, useMediaQuery, Box } from '@mui/material';
-import { Desktop, Mobail } from './CatalogCart';
+import { Desktop, Mobail } from '../components/CatalogCart';
 
 
 // тестовый источник данных

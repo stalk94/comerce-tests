@@ -9,72 +9,22 @@ import { TgTop, MassageTop, MobailTop, CallTop } from './icons';
 
 type Props = {
     linkItems: NavLinkItem[]
-    useNavigation: (path: string)=> void
 }
-// Ссылки навигации верхнего AppBar
-const linkItemsTest: NavLinkItem[] = [
-    {
-        id: 'company',          // это должно быть уникально, будет использоватся для построения роутинга
-        label: 'Компания',
-        children: [
-            {
-                id: 'info',
-                label: 'О нас',
-            }
-        ]
-    },
-    {
-        id: 'services',
-        label: 'Услуги',
-        children: [
-            {
-                id: 'montage',
-                label: 'Монтаж',
-                children: [
-                    {
-                        id: 'individual',
-                        label: 'Для частных',
-                    }
-                ]
-            }
-        ]
-    },
-    {
-        id: 'payInfo',
-        label: 'Как Купить',
-        children: [
-
-        ]
-    },
-    {
-        id: 'action',
-        label: 'Акции',
-    },
-    {
-        id: 'info',
-        label: 'Информация',
-        children: [
-
-        ]
-    },
-    {
-        id: 'contact',
-        label: 'Контакты',
-    }
-];
 
 
-export default function ({ linkItems, useNavigation }: Props) { 
+
+export default function ({ linkItems }: Props) { 
     const theme = useTheme();
     const router = useRouter();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
 
     const handlerClickRightToolBar =(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, type: RightToolBarTypes)=> {
         console.log('click right tools: ', type);
     }
     const handlerNavigationLinkClick =(item: NavLinkItem)=> {
         console.log(item.path);
-        if(item.path) useNavigation(item.path);
+        if(item.path) router.push(item.path);
     }
     const transform =()=> {
         const func =(items, parent?: string)=> {
