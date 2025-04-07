@@ -5,14 +5,14 @@ import Button from "../components/Buttons";
 
 
 // todo: доработать
-export default function CompanyBlock({ onClick }) {
+export default function CompanyBlock({ onClick, sx }) {
     return(
         <Box
             sx={{
-                mt: 5,
                 p: 5,
                 borderRadius: 5,
-                backgroundColor: (theme)=> theme.palette.background.card
+                backgroundColor: (theme)=> theme.palette.background.card,
+                ...sx
             }}
         >
             <Box

@@ -1,6 +1,7 @@
 import React from "react";
+import { ItemProduct } from '../global.d.ts';
 import { Box, Paper, Typography, BoxProps } from "@mui/material";
-import { ItemProduct } from '../index';
+
 
 
 type DescriptionBlockPriceProps = {

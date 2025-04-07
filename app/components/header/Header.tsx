@@ -1,7 +1,9 @@
 import React from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import { Box, Typography, useTheme, useMediaQuery, IconButton, Button } from "@mui/material";
 import Navigation, { NavLinkItem, RightToolBarTypes } from './app-bar';
 import Logo from "./logo";
+import Breadcrumbs from './breadcrumbs';
 import { TgTop, MassageTop, MobailTop, CallTop } from './icons';
 
 
@@ -64,6 +66,7 @@ const linkItemsTest: NavLinkItem[] = [
 
 export default function ({ linkItems, useNavigation }: Props) { 
     const theme = useTheme();
+    const router = useRouter();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     const handlerClickRightToolBar =(e: React.MouseEvent<HTMLButtonElement, MouseEvent>, type: RightToolBarTypes)=> {
@@ -171,10 +174,11 @@ export default function ({ linkItems, useNavigation }: Props) {
 
             {/* верхняя навигация */}
             <Navigation 
-                onClickCatalog={()=> console.log('catalog click')}
+                onClickCatalog={()=> router.push('/catalog')}
                 items={transform()}
                 onClickRightToolBar={handlerClickRightToolBar}
             />
+            <Breadcrumbs />
         </Box>
     );
 }

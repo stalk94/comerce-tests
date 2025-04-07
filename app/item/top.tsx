@@ -1,6 +1,6 @@
 import React from "react";
-import { VerticalCarousel, HorizontalCarousel } from '../../component/galery';
-import { ItemProduct } from '../index';
+import { VerticalCarousel, HorizontalCarousel } from '../../src/component/galery';
+import { ItemProduct } from '../global.d.ts';
 import DescriptionSegment from './description';
 import { Name } from './atomize';
 import { Box, useTheme, useMediaQuery } from "@mui/material";

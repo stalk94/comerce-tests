@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Button, Typography, Grid2, IconButton } from "@mui/material";
-import { LabelPromo, LabelSecondary } from '../components/Text';
+import { LabelPromo, LabelSecondary } from '../Text';
 import { TgTop, CallTop } from '../header/icons';
 
 

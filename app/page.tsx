@@ -1,11 +1,10 @@
 'use client'
 import React from "react";
-import { ItemPromoBaner, ItemProduct, NavLinkItem } from './global.d.ts';
+import { ItemPromoBaner } from './global.d.ts';
 import PromoBaner from './home/PromoBaner';
 import GridCards from './home/GridCards';
 import Proposition from './components/Proposition';
 import CompanyBlock from './home/CompanyBlock';
-import Catalog from './catalog';
 import { useMediaQuery, useTheme } from "@mui/material";
 
 
@@ -47,20 +46,6 @@ const testData: ItemPromoBaner[] = [
     },
     {},{}
 ];
-const testTovars: ItemProduct[] = [
-    {
-        id: 1,
-        name: 'Чердачная лестница Econ ЧЛ-11 H=280 см, 60 x 87.5 см',
-        description: '',
-        images: [
-            'https://kordodesign.com/wp-content/uploads/2022/05/MNOLM-escalier-bois-droit-pas-cher-KORDO-768x768.jpg',
-        ],
-        price: {
-            old: 10000,
-            current: 8888
-        }
-    }
-];
 
 
 
@@ -82,16 +67,22 @@ export default function Home({ data }: { data: any }) {
 			/>
             {/* выгодные предложения */}
             <Proposition 
+                sx={{
+                    mt: 5
+                }}
                 countRow={isMobile ? 2 : 4}
             />
             {/* карточка компании */}
             <CompanyBlock 
+                sx={{
+                    mt: 7,
+                }}
                 onClick={handlerClickCompanyDetail}
             />
             {/* почему выбирают нас */}
             <GridCards 
                 sx={{ 
-                    mt: 5 
+                    mt: 7 
                 }} 
             />
 

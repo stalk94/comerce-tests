@@ -1,8 +1,8 @@
 import React from "react";
-import { ItemProduct } from '../index';
+import { ItemProduct } from '../global.d.ts';
 import { Box, Paper, Typography } from "@mui/material";
-import NavigationTab from '../../component/navigation';
-import Table from '../../component/table';
+import NavigationTab from '../../src/component/navigation';
+import Table from '../../src/component/table';
 
 
 const Description =()=> {

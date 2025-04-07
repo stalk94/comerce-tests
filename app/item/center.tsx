@@ -1,5 +1,5 @@
 import React from "react";
-import { ItemProduct } from '../index';
+import { ItemProduct } from '../global.d.ts';
 import { Box, Paper, Typography } from "@mui/material";
 
 

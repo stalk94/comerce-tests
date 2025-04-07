@@ -1,8 +1,8 @@
 import React from "react";
 import { useHookstate } from '@hookstate/core';
 import { Box, Typography, Button, useMediaQuery, useTheme } from "@mui/material";
-import { NumberInput } from '../../../src/component/input';
-import { ItemProduct } from '../index';
+import { NumberInput } from '../../src/component/input';
+import { ItemProduct } from '../global.d.ts';
 import { itemState } from './index';
 import BlockPrice from './descripton-price';
 

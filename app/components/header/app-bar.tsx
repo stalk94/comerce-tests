@@ -3,7 +3,7 @@ import { AppBar, Toolbar, Box, useTheme, darken, IconButton, useMediaQuery } fro
 import Logo from "./logo";
 import { Search } from "@mui/icons-material";
 import { UserIcon, CatalogIcon, ShopIcon, MobailMain } from './icons';
-import NavigationItemsDesktop from "../../lib/components/nav-bars/fragment";        // реализация секретна
+import NavigationItemsDesktop from "../../../lib/components/nav-bars/fragment";        // реализация секретна
 
 
 export interface NavLinkItem {

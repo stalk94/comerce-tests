@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography, useMediaQuery, useTheme } from "@mui/material";
-import MarqueeObserver from '../../component/marquee';
+import MarqueeObserver from '../../src/component/marquee';
 
 
 

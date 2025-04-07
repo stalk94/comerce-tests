@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, IconButton, SvgIcon, SxProps, Typography } from '@mui/material';
 import { ItemProduct } from '../global.d.ts';
-import { Price } from '../catalog/item/descripton-price';
+import { Price } from '../item/descripton-price';
 import { LabelHome, LabelSecondary } from './Text';
 
 
