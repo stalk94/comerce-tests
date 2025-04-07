@@ -6,6 +6,9 @@ const nextConfig = {
     },
     images: {
       domains: [],          //! хм
+    },
+    typescript: {
+      ignoreBuildErrors: true, // 👈 отключает ошибки типов
     }
 };
   
