@@ -9,13 +9,15 @@ import { Box, useTheme, useMediaQuery } from "@mui/material";
 
 export default function ({ item }: { item: ItemProduct }) {
     const [currentImage, setCurrentImage] = React.useState<string>();
-    const isMobile = useMediaQuery('(max-width:1000px)');
+    const isMobile = useMediaQuery('(max-width:600px)');
 
     
     return (
-        <section 
-            className="TopCatalogItem"
-            style={{ flexDirection: isMobile ? 'column' : 'row' }}
+        <Box 
+            sx={{ 
+                display: 'flex',
+                flexDirection: isMobile ? 'column' : 'row' 
+            }}
         >
             {/* ANCHOR: имя в mobail */}
             { isMobile &&
@@ -39,7 +41,7 @@ export default function ({ item }: { item: ItemProduct }) {
             }  
 
             {/* ANCHOR: карусели */}
-            { isMobile 
+            { !isMobile 
                 ? <VerticalCarousel
                     item={item}
                     currentSelect={currentImage}
@@ -52,7 +54,7 @@ export default function ({ item }: { item: ItemProduct }) {
                  />
             }
 
-            {/* ANCHOR: картинка только в mobail */}
+            {/* ANCHOR: картинка только */}
             { !isMobile &&
                 <div className="PreviewImage">
                     <img
@@ -74,6 +76,27 @@ export default function ({ item }: { item: ItemProduct }) {
                     !isMobile && <Name name={item.name}/> 
                 }
             />
-        </section>
+
+            <style>
+                {`
+                    .CatalogItem {
+                        height: 100%;
+                    }
+                    .CenterCatalogItem {
+                        display: flex;
+                        flex-direction: column;
+                    }
+
+                    .PreviewImage {
+                        display: flex;
+                        border-radius: 30px;
+                        border: 1px solid #EBEBEB;
+                        margin: 25px;
+                        margin-left: 2%;
+                        min-width: 400px;
+                    }
+                `}
+            </style>
+        </Box>
     );
 }

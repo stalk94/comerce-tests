@@ -7,7 +7,7 @@ import { useParams } from 'next/navigation';
 const itemsTest = [
     { 
         id: 0, 
-        images: ['images/1.png', 'images/2.png', 'images/3.png', 'images/4.png', 'images/5.png'], 
+        images: ['/images/1.png', '/images/2.png', '/images/3.png', '/images/4.png', '/images/5.png'], 
         name: 'Люк сантехнический на магните ЛММ белый 0.8мм',
         description: 'Люк из окрашенного металла сантехнический на магнитах (ЛММ) – экономичный способ перекрыть технологические окна в стенах вспомогательных помещений, коридоров, мест общего пользования.',
         price: {
@@ -17,7 +17,7 @@ const itemsTest = [
     },
     {
         id: 1,
-        images: ['images/1.png', 'images/2.png', 'images/3.png', 'images/4.png', 'images/5.png'],
+        images: ['/images/1.png', '/images/2.png', '/images/3.png', '/images/4.png', '/images/5.png'],
         name: 'Люк сантехнический на магните ЛММ серый 1.0мм',
         description: 'Серый люк с улучшенной магнитной системой. ',
         price: {

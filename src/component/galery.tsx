@@ -4,7 +4,6 @@ import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import 'primereact/resources/primereact.css';
 import { Carousel } from 'primereact/carousel';
 import { ItemProduct } from '../catalog';
-import '../styles/carousel.css';
 
 
 
@@ -40,7 +39,8 @@ export const VerticalCarousel: React.FC =({ item, onChange, currentSelect }: Car
 
     return (
         <div className="vertical-carousel">
-            <Carousel
+            <Carousel 
+                //style={{width: '7%'}}
                 value={item.images}
                 numVisible={4}
                 orientation="vertical"

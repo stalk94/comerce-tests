@@ -1,5 +1,6 @@
 import createCache from '@emotion/cache';
 import ClientLayout from './App';
+import './global.css';
 import './dynamic.css';
 
 //const cache = createCache({ key: 'css', prepend: true });

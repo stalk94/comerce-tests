@@ -1,5 +1,6 @@
 'use client'
 import React from "react";
+import { usePathname, useRouter } from 'next/navigation';
 import { ItemPromoBaner } from './global.d.ts';
 import PromoBaner from './home/PromoBaner';
 import GridCards from './home/GridCards';
@@ -52,11 +53,16 @@ const testData: ItemPromoBaner[] = [
 /** главная страница */
 export default function Home() {
     const theme = useTheme();
+    const router = useRouter();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
 	const handlerClickCompanyDetail =()=> {
         console.log('ClickCompanyDetail');
     }
+    //! временный телепорт к предмету
+    React.useEffect(()=> {
+        router.push('/catalog/luki/1')
+    }, []);
 
 
 	return (

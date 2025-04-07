@@ -59,7 +59,7 @@ export function NumberInput({ value, isAdornments, label, onChange }: NumberInpu
                     textAlign: "center",
                     border: '1px solid #EBEBEB',
                     borderRadius: '20px',
-                    height: '40px',
+                    height: '42px',
                     "& input": {
                         textAlign: "center"
                     }
@@ -70,7 +70,7 @@ export function NumberInput({ value, isAdornments, label, onChange }: NumberInpu
                 sx: {
                     fontSize: '16px',
                     color: "#9F9F9F",
-                    padding: "0 5px 5px", // Отступы для предотвращения перекрытия
+                    padding: "0 5px 1px", // Отступы для предотвращения перекрытия
                     position: "absolute", // Абсолютное позиционирование для подписи
                     transform: "translateY(-90%)",
                     "&.Mui-focused": {

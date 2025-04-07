@@ -31,7 +31,7 @@ export default function DescriptionSegment ({ item, nameComponent }: Description
     
 
     return(
-        <div className="DescriptionTopCatalogItem">
+        <div>
             <Box 
                 sx={{
                     display: 'flex',
