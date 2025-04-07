@@ -18,7 +18,14 @@ export const VerticalCarousel: React.FC =({ item, onChange, currentSelect }: Car
     const itemTemplate =(src: string)=> {
         return (
             <div 
-                className={`carousel-item ${currentSelect===src && 'select'}`}
+                style={{
+                    width: '80px',
+                    height: '80px',
+                    border: '1px solid #EBEBEB',
+                    display: 'flex',
+                    borderRadius: '15px',
+                    background: currentSelect===src && '#243e7e1e'
+                }}
                 onClick={()=> onChange(src)}
             >
                 <img
