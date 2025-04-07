@@ -2,7 +2,6 @@
 /node_modules
 /package-lock.json
 *storybook.log
-/lib
 /pages
 /.next
 links.md
