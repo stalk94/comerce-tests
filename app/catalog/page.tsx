@@ -14,7 +14,7 @@ const catalogs = [
 
 
 // роутинг подключить
-export default function Catalog({ items }) {
+export default function Catalog() {
     const router = useRouter();
     const isMobile = useMediaQuery('(max-width:600px)');
 
@@ -28,7 +28,7 @@ export default function Catalog({ items }) {
             container 
             spacing={2}
         >
-            {( items ?? catalogs).map((product, id) => (
+            { catalogs.map((product, id) => (
                 <Grid2 size={{ xs: 12, sm: 6, md: 4 }} key={id}>
                     <Box
                         onClick={()=> handleClick(product)}

@@ -50,7 +50,7 @@ const testData: ItemPromoBaner[] = [
 
 
 /** главная страница */
-export default function Home({ data }: { data: any }) {
+export default function Home() {
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
