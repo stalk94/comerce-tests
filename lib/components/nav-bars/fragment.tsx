@@ -36,6 +36,7 @@ export const DesktopNestedMenuItem =({ item }: { item: NavLinkItem })=> {
                 startIcon={item.icon || null}
                 endIcon={<KeyboardArrowDown />}
                 onClick={handleClick}
+                sx={{fontWeight:'bold'}}
             >
                 { item.label }
             </Button>
@@ -160,6 +161,7 @@ export default function NavigationItemsDesktop({ items, element }: NavigationIte
                                 color="primary"
                                 startIcon={item.icon || null}
                                 onClick={() => item.comand?.(item)}
+                                sx={{fontWeight:'bold'}}
                             >
                                 { item.label }
                             </Button>
@@ -168,6 +170,7 @@ export default function NavigationItemsDesktop({ items, element }: NavigationIte
                             <IconButton
                                 color="primary" 
                                 onClick={() => item.comand?.(item)}
+                                sx={{fontWeight:'bold'}}
                             >
                                 { item.icon }
                             </IconButton>
