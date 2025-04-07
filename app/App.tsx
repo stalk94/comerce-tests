@@ -68,21 +68,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     const [component, setComponent] = useState();
 
 
-    const useClick =(e: MouseEvent)=> {
-        if (e.target.dataset.edit) {
-            setComponent(e.target);
-        }
-    }
+    //const useClick =(e: MouseEvent)=> {if (e.target?.dataset?.edit) {setComponent(e.target);}}
     
 
     return (
         <ThemeProvider theme={lightTheme}>
             <CssBaseline />
-            <Editor 
-                component={component} 
-            />
+           
             <Box 
-                onClick={useClick}
+                //onClick={useClick}
                 className='BaseLayout'
                 sx={{
                     width: '100%',
