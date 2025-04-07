@@ -4,7 +4,7 @@ import Item from '../../../item/index';
 import { useParams } from 'next/navigation';
 
 
-export const itemsTest = [
+const itemsTest = [
     { 
         id: 0, 
         images: ['images/1.png', 'images/2.png', 'images/3.png', 'images/4.png', 'images/5.png'], 
