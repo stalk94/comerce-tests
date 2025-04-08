@@ -15,8 +15,10 @@ export function NumberInput({ value, isAdornments, label, onChange }: NumberInpu
     const [stateValue, setValue] = React.useState(0);
 
     const handleDecrease = () => {
-        setValue((prev) => Math.max(prev - 1, 0)); // Уменьшаем значение
-        onChange && onChange(value - 1);
+        if(stateValue - 1 >= 0) {
+            setValue((prev) => Math.max(prev - 1, 0)); // Уменьшаем значение
+            onChange && onChange(value - 1);
+        }
     }
     const handleIncrease = () => {
         setValue((prev) => prev + 1); // Увеличиваем значение
@@ -62,6 +64,17 @@ export function NumberInput({ value, isAdornments, label, onChange }: NumberInpu
                     height: '42px',
                     "& input": {
                         textAlign: "center"
+                    },
+                    '& input[type=number]': {
+                        MozAppearance: 'textfield',
+                    },
+                    '& input[type=number]::-webkit-outer-spin-button': {
+                        WebkitAppearance: 'none',
+                        margin: 0,
+                    },
+                    '& input[type=number]::-webkit-inner-spin-button': {
+                        WebkitAppearance: 'none',
+                        margin: 0,
                     }
                 },
                 ...(isAdornments ? useAdornments() : {}),
