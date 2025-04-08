@@ -140,9 +140,10 @@ export default function DescriptionSegment ({ item, nameComponent }: Description
                 {/* ANCHOR: описание */}
                 <Typography
                     sx={{
-                        fontFamily: 'Kinetika, sans-serif',
+                        fontFamily: 'Geometria, sans-serif',
                         mt: 3,
                         //pl: 1,
+                        fontWeight: 100,
                         fontSize: isSmallScreen ? '14px' : '16px',
                         lineHeight: '1.5',
                         textOverflow: 'ellipsis',
@@ -161,10 +162,11 @@ export default function DescriptionSegment ({ item, nameComponent }: Description
                 <Box>
                     <Typography
                         sx={{
-                            fontFamily: 'Kinetika, sans-serif',
+                            fontFamily: 'Geometria, sans-serif',
                             mt: 3,
                             fontSize: '16px',
                             lineHeight: '1.5',
+                            textTransform: 'uppercase',
                             textDecoration: 'underline'
                         }}
                     >

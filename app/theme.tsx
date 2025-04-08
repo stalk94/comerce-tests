@@ -101,6 +101,9 @@ export const darkTheme = createTheme({
 
 export const lightTheme = createTheme({
     elements,
+    typography: {
+        fontFamily: `'Geometria', 'Kinetika', 'Arial', sans-serif`,
+    },
     palette: {
         mode: "light",
         input: {

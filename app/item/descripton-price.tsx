@@ -108,7 +108,7 @@ export default function BlockPrice ({ item }: DescriptionBlockPriceProps) {
             >
                 <Typography color="black"
                     sx={{
-                        fontFamily: 'Kinetika, sans-serif',
+                        fontFamily: 'Geometria, sans-serif',
                         ml: 1,
                         fontWeight: 400,
                         fontSize: {

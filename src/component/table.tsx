@@ -29,7 +29,7 @@ const TableFooter =()=> {
 				<Typography 
 					color='textDisabled'
 					sx={{
-						fontFamily: 'Kinetika, sans-serif',
+						fontFamily: 'Geometria, sans-serif',
 						fontWeight: 400,
 						fontSize: '12px',
 						lineHeight: '1',
@@ -59,7 +59,7 @@ const TableFooter =()=> {
 				<Typography 
 					color='textDisabled'
 					sx={{
-						fontFamily: 'Kinetika, sans-serif',
+						fontFamily: 'Geometria, sans-serif',
 						fontWeight: 400,
 						fontSize: '12px',
 						lineHeight: '1',

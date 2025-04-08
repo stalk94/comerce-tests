@@ -1,0 +1,16 @@
+
+
+.vertical-carousel {
+    
+}
+.carousel-item {
+    width: 80px;
+    height: 80px;
+    border: 1px solid #EBEBEB;
+    display: flex;
+    border-radius: 15px;
+}
+.select {
+    background-color: #243e7e1e;
+    border: 1px solid #54427c69;
+}

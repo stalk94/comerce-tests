@@ -53,7 +53,7 @@ export default function ({ item }: { item: ItemProduct }) {
                     <Typography color="black"
                         sx={{
                             pb: 3,
-                            fontFamily: 'Kinetika, sans-serif',
+                            fontFamily: 'Geometria, sans-serif',
                             fontWeight: 400,
                             fontSize: '16px',
                             lineHeight: '1.5', // 100%
@@ -76,7 +76,7 @@ export default function ({ item }: { item: ItemProduct }) {
                         </svg>
                         <Typography color="black"
                             sx={{      
-                                fontFamily: 'Kinetika, sans-serif',
+                                fontFamily: 'Geometria, sans-serif',
                                 fontWeight: 400,
                                 fontSize: '16px',
                                 lineHeight: '1',

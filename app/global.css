@@ -1,14 +1,23 @@
 
-/*
+
 @font-face {
     font-family: 'Kinetika';
-    src: url('/fonts/Kinetika-Regular.eot');
-    src: url('/fonts/Kinetika-Regular.eot?#iefix') format('embedded-opentype'),
-        url('/fonts/Kinetika-Regular.woff2') format('woff2'),
-        url('/fonts/Kinetika-Regular.woff') format('woff'),
-        url('/fonts/Kinetika-Regular.svg#Kinetika-Regular') format('svg');
+    src: url('/fonts/Kinetika/Kinetika-Black.eot');
+    src: url('/fonts/Kinetika/Kinetika-Black.eot') format('embedded-opentype'),
+         url('/fonts/Kinetika/Kinetika-Black.woff2') format('woff2'),
+         url('/fonts/Kinetika/Kinetika-Black.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
-*/
+
+@font-face {
+    font-family: 'Geometria';
+    src: url('/fonts/Geometria/Geometria-Regular.eot');
+    src: url('/fonts/Geometria/Geometria-Regular.eot') format('embedded-opentype'),
+         url('/fonts/Geometria/Geometria-Regular.woff2') format('woff2'),
+         url('/fonts/Geometria/Geometria-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}

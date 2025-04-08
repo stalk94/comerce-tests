@@ -22,7 +22,7 @@ const Description =()=> {
             </Typography>
             <Typography color="black"
                 sx={{
-                    fontFamily: 'Kinetika, sans-serif',
+                    fontFamily: 'Geometria, sans-serif',
                     fontWeight: 100,
                     fontSize: '16px',
                     lineHeight: '1',
@@ -48,7 +48,7 @@ const Description =()=> {
             </Typography>
             <Typography color="black"
                 sx={{
-                    fontFamily: 'Kinetika, sans-serif',
+                    fontFamily: 'Geometria, sans-serif',
                     fontWeight: 100,
                     fontSize: '16px',
                     lineHeight: '1',
