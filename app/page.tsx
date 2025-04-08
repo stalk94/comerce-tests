@@ -7,7 +7,7 @@ import GridCards from './home/GridCards';
 import Proposition from './components/Proposition';
 import CompanyBlock from './home/CompanyBlock';
 import { useMediaQuery, useTheme } from "@mui/material";
-
+window.test = false
 
 /*
 	export async function getServerSideProps({ req }) {
@@ -61,7 +61,10 @@ export default function Home() {
     }
     //! временный телепорт к предмету
     React.useEffect(()=> {
-        router.push('/catalog/luki/1')
+        if(!window.test) {
+            window.test = true;
+            router.push('/catalog/luki/1');
+        }
     }, []);
 
 
