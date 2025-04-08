@@ -3,15 +3,17 @@ import { SvgIcon, SvgIconProps } from '@mui/material';
 
 
 
-export default function({ isMobail, ...props }) {
+export default function({ isMobail, ...props }: SvgIconProps) {
     return(
         <SvgIcon  
+            { ...props }
             viewBox="0 0 208 35" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
             sx={{
                 mt: !isMobail && 1,
                 width: isMobail ? 180 : 200,
+                ...props.sx
             }}
         >
             <path fillRule="evenodd" clipRule="evenodd" d="M32.7213 18.4224L32.7205 13.9395L24.311 18.9181L24.3134 19.7673L20.217 22.0824L20.226 12.278L24.2108 10.0477L24.2617 12.7228L32.7303 7.9612V5.16854L23.7487 0.0550842L16.3463 4.24121L8.84371 0L0.059914 4.97041L0 25.6223L16.3668 35L32.7197 25.638L32.7189 21.3836L21.2454 28.1396L16.3504 31.0219L3.39795 23.503L3.40206 7.06429L9.09979 3.61723L16.3767 7.96778L23.4853 3.72987L28.6906 6.75518L27.269 7.57646L24.2461 5.94048L16.9159 10.0321L16.9184 28.1799L27.8197 22.1079L27.8181 21.3639L32.7213 18.4224Z" fill="#9C2426"/>

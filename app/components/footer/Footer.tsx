@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import Desktop from './desktop';
+import Mobail from './mobail';
 
 
 export default function() {
@@ -14,12 +15,14 @@ export default function() {
                 display: 'flex',
                 flexDirection: 'column',
                 backgroundColor: (theme) => theme.palette.background.card,
-                mt: 5
+                mt: 5,
+                borderTopLeftRadius: 35,
+                borderTopRightRadius: 35,
             }}
         >
             { !isSmallScreen
                 ? <Desktop />
-                : <></>
+                : <Mobail/>
             }
         </Box>
     );

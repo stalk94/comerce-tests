@@ -16,6 +16,7 @@ type Props = {
 export default function ({ linkItems }: Props) { 
     const theme = useTheme();
     const router = useRouter();
+    const path = usePathname();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
 
@@ -60,10 +61,10 @@ export default function ({ linkItems }: Props) {
                     sx={{
                         display:'flex',
                         flexDirection: 'row',
-                        my: 0.5
+                        my: 0.5,
                     }}
                 >
-                    <Logo isMobail={false} />
+                    <Logo isMobail={false} sx={{fontSize: 32,ml:0.5}} />
                     <Box
                         sx={{
                             display:'flex',
@@ -128,7 +129,9 @@ export default function ({ linkItems }: Props) {
                 items={transform()}
                 onClickRightToolBar={handlerClickRightToolBar}
             />
-            <Breadcrumbs />
+            { (!(isMobile && path.includes('/luki/'))) &&
+                <Breadcrumbs />
+            }
         </Box>
     );
 }

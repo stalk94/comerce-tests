@@ -3,8 +3,8 @@ import { VerticalCarousel, HorizontalCarousel } from '../../src/component/galery
 import { ItemProduct } from '../global.d.ts';
 import DescriptionSegment from './description';
 import { Name } from './atomize';
-import { Box, useTheme, useMediaQuery } from "@mui/material";
-
+import { Box, useTheme, useMediaQuery, IconButton } from "@mui/material";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 
 export default function ({ item }: { item: ItemProduct }) {
@@ -16,22 +16,21 @@ export default function ({ item }: { item: ItemProduct }) {
         <Box 
             sx={{ 
                 display: 'flex',
-                flexDirection: isMobile ? 'column' : 'row' 
+                flexDirection: isMobile ? 'column' : 'row' ,
+                mx: 1
             }}
         >
             {/* ANCHOR: имя в mobail */}
             { isMobile &&
                 <Box 
+                    onClick={()=> console.log('ss')}
                     sx={{
                         display: 'flex',
                         flexDirection: 'row',
                         alignItems: 'center',
 				    }}
                 >
-                    <svg width="16" height="16" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.34828 5L7 1.57074L5.32736 0L1.67564 3.42926L1.67264 3.42644L0 4.99719L0.00299883 5L0 5.00281L1.67264 6.57356L1.67564 6.57074L5.32736 10L7 8.42926L3.34828 5Z" fill="#415878"/>
-                    </svg>
-
+                    <ArrowBackIcon />
                     <Name 
                         sx={{ ml: 1 }} 
                         name={item.name}

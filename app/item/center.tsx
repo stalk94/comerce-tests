@@ -9,7 +9,8 @@ export default function ({ item }: { item: ItemProduct }) {
     return (
         <Box className="CenterCatalogItem"
             sx={{
-                py: 5
+                py: 5,
+                mx: 1
             }}
         >
             <Typography

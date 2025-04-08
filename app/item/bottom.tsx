@@ -77,7 +77,7 @@ export default function ({ item, onTableChange }: { item: ItemProduct }) {
 
 
     return (
-        <section className="CenterCatalogItem">
+        <Box sx={{mx: 1}}>
             {/* табличка размеров и цен */}
             <Table 
                 onChange={onTableChange}
@@ -99,7 +99,7 @@ export default function ({ item, onTableChange }: { item: ItemProduct }) {
                     display: 'flex',
                     alignItems: 'center',
                     borderRadius: '30px',
-                    mt: 3
+                    mt: 3,
                 }}
             >
                 <Box sx={{ display: 'flex', flexDirection: 'column' }}>
@@ -122,6 +122,6 @@ export default function ({ item, onTableChange }: { item: ItemProduct }) {
                 </Box>
             </Paper>
             
-        </section>
+        </Box>
     );
 }
