@@ -48,7 +48,7 @@ const testData: ItemPromoBaner[] = [
     {},{}
 ];
 
-
+console.log(window.test)
 
 /** главная страница */
 export default function Home() {
