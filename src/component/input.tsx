@@ -26,9 +26,14 @@ export function NumberInput({ value, isAdornments, label, onChange }: NumberInpu
     }
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newValue = parseInt(e.target.value, 10);
+        
         if (!isNaN(newValue)) {
             setValue(newValue); // Устанавливаем значение из ввода
             onChange && onChange(newValue);
+        }
+        else {
+            setValue(0);
+            onChange && onChange(0);
         }
     }
     const useAdornments =()=> ({
@@ -51,11 +56,13 @@ export function NumberInput({ value, isAdornments, label, onChange }: NumberInpu
 
     return (
         <TextField
-            type="number"
+            type="text"
             label={label}
             value={value ?? stateValue}
             onChange={handleChange}
             InputProps={{
+                inputMode: 'numeric',
+                pattern: '[0-9]*',
                 sx: {
                     color: "black",
                     textAlign: "center",
