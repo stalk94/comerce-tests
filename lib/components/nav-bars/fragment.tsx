@@ -38,7 +38,8 @@ export const DesktopNestedMenuItem =({ item }: { item: NavLinkItem })=> {
                 onClick={handleClick}
                 sx={{
                     fontWeight: 400,
-                    fontFamily: 'Kinetika, sans-serif'
+                    fontFamily: 'Kinetika, sans-serif',
+                    fontSize: 16
                 }}
             >
                 { item.label }
@@ -165,8 +166,9 @@ export default function NavigationItemsDesktop({ items, element }: NavigationIte
                                 startIcon={item.icon || null}
                                 onClick={() => item.comand?.(item)}
                                 sx={{
-                                    fontWeight: 400,
-                                    fontFamily: 'Kinetika, sans-serif'
+                                    fontWeight: 200,
+                                    fontFamily: 'Kinetika, sans-serif',
+                                    fontSize: 16
                                 }}
                             >
                                 { item.label }
@@ -178,7 +180,8 @@ export default function NavigationItemsDesktop({ items, element }: NavigationIte
                                 onClick={() => item.comand?.(item)}
                                 sx={{
                                     fontWeight: 400, 
-                                    fontFamily: 'Kinetika, sans-serif'
+                                    fontFamily: 'Kinetika, sans-serif',
+                                    fontSize: 16
                                 }}
                             >
                                 { item.icon }

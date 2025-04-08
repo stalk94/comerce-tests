@@ -63,6 +63,7 @@ export default function Navbar({ items, onClickCatalog, onClickRightToolBar }: N
                     sx={{
                         ml: 1,
                         fontSize: '14px',
+                        fontFamily: 'Kinetika, sans-serif',
                         display: {
                             xs: 'none',
                             md: 'block'
