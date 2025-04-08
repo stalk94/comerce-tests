@@ -102,7 +102,7 @@ export default function DescriptionSegment ({ item, nameComponent }: Description
         stateTable[name].set(value);
     }
     const handleClick =()=> {
-        
+        setOpenModal(true);
     }
     
 
@@ -121,6 +121,7 @@ export default function DescriptionSegment ({ item, nameComponent }: Description
                         p: 3
                     }}
                 >
+                    Пример Модалки
                     <DotRow
                         label='test'
                         value='test'
