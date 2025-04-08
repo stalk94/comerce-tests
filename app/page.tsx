@@ -7,7 +7,9 @@ import GridCards from './home/GridCards';
 import Proposition from './components/Proposition';
 import CompanyBlock from './home/CompanyBlock';
 import { useMediaQuery, useTheme } from "@mui/material";
-window.test = false
+import { hookstate, useHookstate } from "@hookstate/core";
+
+const redirect = hookstate(false);
 
 /*
 	export async function getServerSideProps({ req }) {
@@ -48,7 +50,7 @@ const testData: ItemPromoBaner[] = [
     {},{}
 ];
 
-console.log(window.test)
+
 
 /** главная страница */
 export default function Home() {
@@ -61,8 +63,8 @@ export default function Home() {
     }
     //! временный телепорт к предмету
     React.useEffect(()=> {
-        if(!window.test) {
-            window.test = true;
+        if(!redirect.get()) {
+            redirect.set(true);
             router.push('/catalog/luki/1');
         }
     }, []);
